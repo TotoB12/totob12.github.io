@@ -41,6 +41,24 @@
      margin: 16px 0px; 
      border: 2px solid #C3E0E5;
   } 
+      
+  .column {
+   width: 49%;
+   }
+
+   .column.left {
+   float: left;
+   }
+
+   .column.right {
+   float: right;
+   }
+
+   .row:after {
+   content: "";
+   display: table;
+   clear: both;
+   }  
    
    .title { 
    background-color: #274472;
@@ -70,10 +88,17 @@
   </h1>
   
   <div class="box">
+    <div class="row">
+      <div class="column left">
   <button onclick="window.location.href='/things/game/index.html';">
 Unblocked Games</button>
+                </div>
+
+        <div class="column right">
         <button onclick="window.location.href='/things/GBA/index.html';">
 GBA Emulator</button>
+      </div>
+    </div>
   </div>
         
    
