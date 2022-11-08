@@ -1,5 +1,0 @@
-version: "1"
-rules:
-  - base: master
-    upstream: 3kh0:main
-    mergeMethod: hardreset
