@@ -7,22 +7,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="favicon.ico">
   </head>
+  
+  <style>
+  
+   body {
+   background-color: #1a1d21; 
+   margin: 0px;
+   } 
+   
+   .button { 
+   padding: 8px 8px; 
+   border-radius: 8px; 
+   transition-duration: 0.4s; 
+   width: 40%; 
+   float: left;
+   cursor: pointer; 
+   opacity: 0.8; 
+   color: white;
+   font-family: "Century Gothic", "Monospace";
+   background-color: #5885AF;
+   margin: 16px 0px; 
+   margin-right: 16px;
+   border: 2px solid #C3E0E5;
+   background-color: #41729F; 
+   } 
+   
+   .button.r {
+   width: 20%
+   }
+   
+   .button:hover { 
+   opacity: 1; 
+   } 
+
+   .column.left {
+   float: left;
+   width: 50%
+   }
+
+   .column.right {
+   float: right;
+   width: 50%
+   }
+
+   .row:after {
+   content: "";
+   display: table;
+   clear: both;
+   }  
+   
+   .title { 
+   background-color: #274472;
+   color: #C3E0E5;
+   padding: 32px 16px; 
+   margin: 0px; 
+   font-family: "Century Gothic", "Monospace";
+   font-size: 64px;
+   text-align: center;
+   } 
+   
+   .feedback { 
+   color: #C3E0E5; 
+   margin: 16px 16px; 
+   font-family: "Century Gothic", "Monospace";
+   text-align: left;
+   margin-top: 32px;
+   } 
+   
+   form {
+   color: white; 
+   margin: 16px 16px; 
+   font-family: "Century Gothic", "Monospace";
+   text-align: left;
+   }
+   
+   .textinput {
+   color: black;  
+   font-family: "Century Gothic", "Monospace";
+   text-align: left;
+   border-radius: 4px; 
+   border: 2px solid #C3E0E5;
+   }
+   
+   .textinput:hover { 
+   border: 2px solid #274472;
+   }
+   
+   textarea {
+   resize: none;
+   width: 100%;
+   margin-top: 16px;
+   overflow: auto;
+   border-radius: 8px; 
+   border: 2px solid #C3E0E5;
+   }
+   
+   textarea:hover { 
+   border: 2px solid #274472;
+   }
+      
+   .box {
+   margin: 16px 16px;
+   padding: 0 0;
+   }
+  
+  </style>
+  
   <body>
-    <h1>TotoB12 Feedback Form</h1>
+  
+    <h1 class="title">
+    <a href="https://totob12.github.io/"><img class="titleimg" src="/things/totob12title2.png" align="center" width=30%></a></h1>
+    
+    <h1 class="feedback" >Feedback Form</h1>
+    
+    <div class="box">
+    <div class="row">
+    <div class="column left">
     <form action="mailto:totob12github@gmail.com" method="post" enctype="text/plain">
-      First Name : <input type="text" name="firstname" placeholder="Enter name here">
+      First Name : <input class="textinput" type="text" name="firstname" placeholder="Enter name here" required>
       <br>
       <br>
-      Email: <input type="email" name="mail" placeholder="E-Mail Address">
+      Email: <input class="textinput" type="email" name="mail" placeholder="E-Mail Address" required>
       <br>
       <br>
         Comment:<br>        
-        <textarea rows="6" cols="50" name="commentfield"></textarea>
+        <textarea rows="10" cols="50" name="commentfield" required></textarea>
         <br>
-        <br>
-        <input type="submit" value="Send Feedback">
-        <input type="reset" value="Reset">
+        <input class="button" type="submit" value="Send Feedback">
+        <input class="button r" type="reset" value="Reset">
+        
     </form>
+    </div>
+    <div class="column right">
+    <img src="/things/totob12feedback.png" align="center" width=100%>
+    </div>
+    </div>
+    </div>
     
   </body>  
 </html>
