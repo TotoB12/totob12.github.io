@@ -11,7 +11,7 @@ const changeTabTitle = () => {
   const newtitle = document.getElementById("userinput");
   if (newtitle.value == ""){ //check if the input is blank when they submit
       window.localStorage.removeItem("title");
-      window.document.title = "3kh0.github.io"
+      window.document.title = "totob12.github.io"
       document.getElementById("console-output").style.color = "red"; //error = red
       console_output.innerText = "No title entered. Default applied" //return output successful
   } else {
