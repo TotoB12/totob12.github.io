@@ -6,6 +6,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="/things/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
  
     <style> 
    
@@ -55,6 +56,58 @@
    margin: 16px 16px;
    padding: 0 0;
    }
+   
+   ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #41729F;
+  font-family: "Century Gothic", "Monospace";
+  }
+
+  li a {
+  display: block;
+  text-align: center;
+  color: #c9c7c7;
+  text-decoration: none;
+  }
+
+  li a:hover:not(.active, .img) {
+  background-color: #5885AF;
+  }
+  
+  .active {
+  background-color: #39648C;
+  color: #c9c7c7;
+  }
+  
+  .icon {
+  padding: 10px 8px;  
+  float: left;
+  }
+  
+  .iconshow {
+  float: right;
+  }
+  
+  .right {
+  float: right;
+  }
+  
+  .img {
+  float: right;
+  }
+  
+  .cc {
+    margin: 0;
+    padding: 5px 0;
+    padding-bottom: 0;
+    padding-left: 2px;
+    float: right;
+    color: #c9c7c7;
+    font-size: 14px
+  }
      
    </style>
 
@@ -62,6 +115,27 @@
 <body>
 
 <div class="a">
+
+<ul>
+  <li><img class="img" src="/things/logo.jpg" alt="Logo" height="44"></li>
+  <li><a class="icon" href="index.html"><span class="material-symbols-outlined">
+home</span></a></li>
+  <li><a class="icon" href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">
+  forum</span><p class=cc>Social</p></a></li>
+<li><a class="icon" href="/things/inpainting-forward.html"><span class="material-symbols-outlined">
+format_paint</span><p class="cc">Paint</p></a></li>
+  <li><a class="icon" href="https://chill-radio.totob12.repl.co/"><span class="material-symbols-outlined">
+radio</span><p class="cc">Radio</p></a></li>
+<li><a class="icon" href="/things/games.html"><span class="material-symbols-outlined">
+sports_esports</span><p class="cc">Games</p></a></li>
+<li><a class="icon active" href="/things/sites.html"><span class="material-symbols-outlined">
+handyman</span><p class="cc">Random</p></a></li>
+  <li><a class="icon right" href="/things/feedback.html"><span class="material-symbols-outlined">
+alternate_email</span></a></li>
+<li><a class="icon right" href="/things/countdown.html"><span class="material-symbols-outlined">
+hourglass_empty</span></a></li>
+
+  </ul>
 
 <h1 class="title">
   <a href="https://totob12.github.io/">
