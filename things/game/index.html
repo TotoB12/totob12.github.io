@@ -21,9 +21,96 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
+  <style>
+   body {
+      margin: 0;
+    }
+    
+    .title {
+      background-color: #274472; 
+      color: #C3E0E5; 
+      padding: 32px 16px; 
+      margin: 0px; 
+      font-family: "Century Gothic", "Monospace"; 
+      font-size: 64px; 
+      text-align: center;
+    }
+
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #41729F;
+  font-family: "Century Gothic", "Monospace";
+  }
+
+  li a {
+  display: block;
+  text-align: center;
+  color: #c9c7c7;
+  text-decoration: none;
+  }
+
+  li a:hover:not(.active, .img) {
+  background-color: #5885AF;
+  }
+  
+  .active {
+  background-color: #39648C;
+  color: #c9c7c7;
+  }
+  
+  .icon {
+  padding: 10px 8px;  
+  float: left;
+  }
+  
+  .iconshow {
+  float: right;
+  }
+  
+  .right {
+  float: right;
+  }
+  
+  .img {
+  float: right;
+  }
+
+  .cc {
+    margin: 0;
+    padding: 5px 0;
+    padding-bottom: 0;
+    padding-left: 2px;
+    float: right;
+    color: #c9c7c7;
+    font-size: 14px
+  }
+  </style>
   <body>
-    <h1 style="background-color: #274472; color: #C3E0E5; padding: 32px 16px; margin: 0px; font-family: "Century Gothic", "Monospace"; font-size: 64px; text-align: center;" align="center">TotoB12 Games</h1>
+    <ul>
+    <li><a class="img"><img src="totob12icon.png" alt="Logo" height="44"></a></li>
+    <li><a class="icon" href="https://totob12.github.io/index.html"><span class="material-symbols-outlined">
+    home</span></a></li>
+    <li><a class="icon" href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">
+    forum</span><h10 class=cc>Social</h10></a></li>
+    <li><a class="icon" href="https://totob12.github.io/things/inpainting-forward.html"><span class="material-symbols-outlined">
+    format_paint</span><h10 class="cc">Paint</h10></a></li>
+    <li><a class="icon" href="https://chill-radio.totob12.repl.co/"><span class="material-symbols-outlined">
+    radio</span><h10 class="cc">Radio</h10></a></li>
+    <li><a class="icon active" href="https://totob12.github.io/things/games.html"><span class="material-symbols-outlined">
+    sports_esports</span><h10 class="cc">Games</h10></a></li>
+    <li><a class="icon" href="https://totob12.github.io/things/sites.html"><span class="material-symbols-outlined">
+    handyman</span><h10 class="cc">Random</h10></a></li>
+    <li><a class="icon right" href="https://totob12.github.io/things/feedback.html"><span class="material-symbols-outlined">
+    alternate_email</span></a></li>
+    <li><a class="icon right" href="https://totob12.github.io/things/countdown.html"><span class="material-symbols-outlined">
+    hourglass_empty</span></a></li>
+    </ul>
+    <h1 class="title">Classic games</h1>
     </br>
     <div class="text-center">
       <input type="text" class="text-center" id="mySearch" onload="startSearch()" onkeyup="startSearch()" placeholder="Search for games..." title="Search" autofocus />
