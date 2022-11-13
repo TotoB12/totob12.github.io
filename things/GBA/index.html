@@ -3,6 +3,7 @@
     <head>
         <title>GBA Emulator</title>
         <link rel="icon" type="image/x-icon" href="/things/favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <meta charset="UTF-8">
     </head>
     
@@ -13,7 +14,7 @@
      margin: 0px;
    }
    
-   a {
+   .game {
    padding: 2px 4px; 
    border-radius: 6px; 
    transition-duration: 0.4s; 
@@ -28,7 +29,7 @@
    text-decoration: none;
    }
    
-   a:hover { 
+   .game:hover { 
    opacity: 0.8; 
    }
    
@@ -76,120 +77,192 @@
    margin: 16px 16px; 
    font-family: "Century Gothic", "Monospace";
    }
+
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #41729F;
+  font-family: "Century Gothic", "Monospace";
+  }
+
+  li a {
+  display: block;
+  text-align: center;
+  color: #c9c7c7;
+  text-decoration: none;
+  }
+
+  li a:hover:not(.active, .img) {
+  background-color: #5885AF;
+  }
+  
+  .active {
+  background-color: #39648C;
+  color: #c9c7c7;
+  }
+  
+  .icon {
+  padding: 10px 8px;  
+  float: left;
+  }
+  
+  .iconshow {
+  float: right;
+  }
+  
+  .right {
+  float: right;
+  }
+  
+  .img {
+  float: right;
+  }
+
+  .cc {
+    margin: 0;
+    padding: 5px 0;
+    padding-bottom: 0;
+    padding-left: 2px;
+    float: right;
+    color: #c9c7c7;
+    font-size: 14px
+  }
     
     </style>
     
     <body>
-        <h1 class="title">GBA Emulator</h1>
+    <ul>
+    <li><a class="img"><img src="totob12icon.png" alt="Logo" height="44"></a></li>
+    <li><a class="icon" href="https://totob12.github.io/index.html"><span class="material-symbols-outlined">
+    home</span></a></li>
+    <li><a class="icon" href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">
+    forum</span><h10 class=cc>Social</h10></a></li>
+    <li><a class="icon" href="https://totob12.github.io/things/inpainting-forward.html"><span class="material-symbols-outlined">
+    format_paint</span><h10 class="cc">Paint</h10></a></li>
+    <li><a class="icon" href="https://chill-radio.totob12.repl.co/"><span class="material-symbols-outlined">
+    radio</span><h10 class="cc">Radio</h10></a></li>
+    <li><a class="icon active" href="https://totob12.github.io/things/games.html"><span class="material-symbols-outlined">
+    sports_esports</span><h10 class="cc">Games</h10></a></li>
+    <li><a class="icon" href="https://totob12.github.io/things/sites.html"><span class="material-symbols-outlined">
+    handyman</span><h10 class="cc">Random</h10></a></li>
+    <li><a class="icon right" href="https://totob12.github.io/things/feedback.html"><span class="material-symbols-outlined">
+    alternate_email</span></a></li>
+    <li><a class="icon right" href="https://totob12.github.io/things/countdown.html"><span class="material-symbols-outlined">
+    hourglass_empty</span></a></li>
+    </ul>
+      
+        <h1 class="title">Retro games</h1>
         <h2 class="text">Select a game:</h2>
         <div>
             <p class="list">
             <strong>A</strong><br>
-            <a href="./launcher.html#advancewars">Advance Wars</a><br>
-            <a href="./launcher.html#advancewars2">Advance Wars 2</a><br>
-            <a href="./launcher.html#aladdin">Aladdin</a><br>
-            <a href="./launcher.html#alienhominid">Alien Hominid</a><br>
+            <a class="game" href="./launcher.html#advancewars">Advance Wars</a><br>
+            <a class="game" href="./launcher.html#advancewars2">Advance Wars 2</a><br>
+            <a class="game" href="./launcher.html#aladdin">Aladdin</a><br>
+            <a class="game" href="./launcher.html#alienhominid">Alien Hominid</a><br>
             <strong>B</strong><br>
-            <a href="./launcher.html#bomberman_max2blue">Bomberman Max 2 - Blue Advance</a><br>
-            <a href="./launcher.html#bomberman_tournament">Bomberman Tournament</a><br>
-            <a href="./launcher.html#bubblebobble">Bubble Bobble: Old and New</a><br>
+            <a class="game" href="./launcher.html#bomberman_max2blue">Bomberman Max 2 - Blue Advance</a><br>
+            <a class="game" href="./launcher.html#bomberman_tournament">Bomberman Tournament</a><br>
+            <a class="game" href="./launcher.html#bubblebobble">Bubble Bobble: Old and New</a><br>
             <strong>C</strong><br>
-            <a href="./launcher.html#croket1">Croket! - Yume no Banker Survival!</a><br>
-            <a href="./launcher.html#croket2">Croket! 2 - Yami no Bank to Banqueen</a><br>
-            <a href="./launcher.html#croket3">Croket! 3 - Granu Oukoku no Nazo</a><br>
-            <a href="./launcher.html#croket4">Croket! 4 - Bank no Mori no Mamorigami</a><br>
+            <a class="game" href="./launcher.html#croket1">Croket! - Yume no Banker Survival!</a><br>
+            <a class="game" href="./launcher.html#croket2">Croket! 2 - Yami no Bank to Banqueen</a><br>
+            <a class="game" href="./launcher.html#croket3">Croket! 3 - Granu Oukoku no Nazo</a><br>
+            <a class="game" href="./launcher.html#croket4">Croket! 4 - Bank no Mori no Mamorigami</a><br>
             <strong>D</strong><br>
-            <a href="./launcher.html#digimon_racing">Digimon Racing</a><br>
-            <a href="./launcher.html#dbz_supersonic">Dragon Ball Z - Supersonic Warriors</a><br>
-            <a href="./launcher.html#drilldozer">Drill Dozer</a><br>
+            <a class="game" href="./launcher.html#digimon_racing">Digimon Racing</a><br>
+            <a class="game" href="./launcher.html#dbz_supersonic">Dragon Ball Z - Supersonic Warriors</a><br>
+            <a class="game" href="./launcher.html#drilldozer">Drill Dozer</a><br>
             <strong>E</strong><br>
-            <a href="./launcher.html#earthwormjim">Earthworm Jim</a><br>
-            <a href="./launcher.html#earthwormjim2">Earthworm Jim 2</a><br>
+            <a class="game" href="./launcher.html#earthwormjim">Earthworm Jim</a><br>
+            <a class="game" href="./launcher.html#earthwormjim2">Earthworm Jim 2</a><br>
             <strong>F</strong><br>
-            <a href="./launcher.html#ff1and2">Final Fantasy 1 &amp; 2 Advance</a><br>
-            <a href="./launcher.html#ff4S">Final Fantasy IV Advance (Sound Restoration Mod)</a><br>
-            <a href="./launcher.html#ff6">Final Fantasy VI Advance</a><br>
-            <a href="./launcher.html#final_fantasy_tactics">Final Fantasy Tactics Advance</a><br>
-            <a href="./launcher.html#fire_emblem">Fire Emblem</a><br>
-            <a href="./launcher.html#frogger1">Frogger Advance - The Great Quest</a><br>
-            <a href="./launcher.html#frogger2">Frogger's Adventures - Temple of the Frog</a><br>
-            <a href="./launcher.html#fzero_gp">F-Zero - GP Legend</a><br>
-            <a href="./launcher.html#fzero_max">F-Zero - Maximum Velocity</a><br>
+            <a class="game" href="./launcher.html#ff1and2">Final Fantasy 1 &amp; 2 Advance</a><br>
+            <a class="game" href="./launcher.html#ff4S">Final Fantasy IV Advance (Sound Restoration Mod)</a><br>
+            <a class="game" href="./launcher.html#ff6">Final Fantasy VI Advance</a><br>
+            <a class="game" href="./launcher.html#final_fantasy_tactics">Final Fantasy Tactics Advance</a><br>
+            <a class="game" href="./launcher.html#fire_emblem">Fire Emblem</a><br>
+            <a class="game" href="./launcher.html#frogger1">Frogger Advance - The Great Quest</a><br>
+            <a class="game" href="./launcher.html#frogger2">Frogger's Adventures - Temple of the Frog</a><br>
+            <a class="game" href="./launcher.html#fzero_gp">F-Zero - GP Legend</a><br>
+            <a class="game" href="./launcher.html#fzero_max">F-Zero - Maximum Velocity</a><br>
             <strong>G</strong><br>
-            <a href="./launcher.html#gamewatch4">Game &amp; Watch Gallery 4</a><br>
-            <a href="./launcher.html#goldensun">Golden Sun</a><br>
-            <a href="./launcher.html#gunstar_super_heroes">Gunstar Super Heroes</a><br>
+            <a class="game" href="./launcher.html#gamewatch4">Game &amp; Watch Gallery 4</a><br>
+            <a class="game" href="./launcher.html#goldensun">Golden Sun</a><br>
+            <a class="game" ref="./launcher.html#gunstar_super_heroes">Gunstar Super Heroes</a><br>
             <strong>H</strong><br>
-            <a href="./launcher.html#hamtaro_heartbreak">Hamtaro - Ham-Ham Heartbreak</a><br>
+            <a class="game" href="./launcher.html#hamtaro_heartbreak">Hamtaro - Ham-Ham Heartbreak</a><br>
             <strong>K</strong><br>
-            <a href="./launcher.html#kirbymirror">Kirby &amp; The Amazing Mirror</a><br>
-            <a href="./launcher.html#kirbynightmare">Kirby: Nightmare in Dreamland</a><br>
+            <a class="game" href="./launcher.html#kirbymirror">Kirby &amp; The Amazing Mirror</a><br>
+            <a class="game" href="./launcher.html#kirbynightmare">Kirby: Nightmare in Dreamland</a><br>
             <strong>M</strong><br>
-            <a href="./launcher.html#superstar">Mario &amp; Luigi: Superstar Saga</a><br>
-            <a href="./launcher.html#mariokart">Mario Kart: Super Circuit</a><br>
-            <a href="./launcher.html#marioparty">Mario Party Advance</a><br>
-            <a href="./launcher.html#mariopinball">Mario Pinball Land</a><br>
-            <a href="./launcher.html#megamanbass">Megaman &amp; Bass</a><br>
-            <a href="./launcher.html#megaman_battle1">Megaman Battle Network 1</a><br>
-            <a href="./launcher.html#megaman_battle2">Megaman Battle Network 2</a><br>
-            <a href="./launcher.html#megaman_battle3_blue">Megaman Battle Network 3 Blue</a><br>
-            <a href="./launcher.html#megaman_battle4_blue">Megaman Battle Network 4 Blue Moon</a><br>
-            <a href="./launcher.html#megaman_battle4_red">Megaman Battle Network 4 Red Sun</a><br>
-            <a href="./launcher.html#megaman_battle5">Megaman Battle Network 5 Team Protoman</a><br>
-            <a href="./launcher.html#megaman_battle6">Megaman Battle Network 6 Cybeast Falzar</a><br>
-            <a href="./launcher.html#megaman_zero1">Megaman Zero</a><br>
-            <a href="./launcher.html#megaman_zero2">Megaman Zero 2</a><br>
-            <a href="./launcher.html#megaman_zero3">Megaman Zero 3</a><br>
-            <a href="./launcher.html#megaman_zero4">Megaman Zero 4</a><br>
-            <a href="./launcher.html#metalslug">Metal Slug Advance</a><br>
-            <a href="./launcher.html#metroid_fusion">Metriod Fusion</a><br>
-            <a href="./launcher.html#momotarou_dentetsu">Momotarou Dentetsu G Gold Deck wo Tsukure!</a><br>
-            <a href="./launcher.html#monopoly">Monopoly</a><br>
-            <a href="./launcher.html#monster_force">Monster Force</a><br>
-            <a href="./launcher.html#mortal_kombat">Mortal Kombat Advance</a><br>
+            <a class="game" href="./launcher.html#superstar">Mario &amp; Luigi: Superstar Saga</a><br>
+            <a class="game" href="./launcher.html#mariokart">Mario Kart: Super Circuit</a><br>
+            <a class="game" href="./launcher.html#marioparty">Mario Party Advance</a><br>
+            <a class="game" href="./launcher.html#mariopinball">Mario Pinball Land</a><br>
+            <a class="game" href="./launcher.html#megamanbass">Megaman &amp; Bass</a><br>
+            <a class="game" href="./launcher.html#megaman_battle1">Megaman Battle Network 1</a><br>
+            <a class="game" href="./launcher.html#megaman_battle2">Megaman Battle Network 2</a><br>
+            <a class="game" href="./launcher.html#megaman_battle3_blue">Megaman Battle Network 3 Blue</a><br>
+            <a class="game" href="./launcher.html#megaman_battle4_blue">Megaman Battle Network 4 Blue Moon</a><br>
+            <a class="game" href="./launcher.html#megaman_battle4_red">Megaman Battle Network 4 Red Sun</a><br>
+            <a class="game" href="./launcher.html#megaman_battle5">Megaman Battle Network 5 Team Protoman</a><br>
+            <a class="game" href="./launcher.html#megaman_battle6">Megaman Battle Network 6 Cybeast Falzar</a><br>
+            <a class="game" href="./launcher.html#megaman_zero1">Megaman Zero</a><br>
+            <a class="game" href="./launcher.html#megaman_zero2">Megaman Zero 2</a><br>
+            <a class="game" href="./launcher.html#megaman_zero3">Megaman Zero 3</a><br>
+            <a class="game" href="./launcher.html#megaman_zero4">Megaman Zero 4</a><br>
+            <a class="game" href="./launcher.html#metalslug">Metal Slug Advance</a><br>
+            <a class="game" href="./launcher.html#metroid_fusion">Metriod Fusion</a><br>
+            <a class="game" href="./launcher.html#momotarou_dentetsu">Momotarou Dentetsu G Gold Deck wo Tsukure!</a><br>
+            <a class="game" href="./launcher.html#monopoly">Monopoly</a><br>
+            <a class="game" href="./launcher.html#monster_force">Monster Force</a><br>
+            <a class="game" href="./launcher.html#mortal_kombat">Mortal Kombat Advance</a><br>
             <strong>P</strong><br>
-            <a href="./launcher.html#pacman_world">Pacman World</a><br>
-            <a href="./launcher.html#pacman_world2">Pacman World 2</a><br>
-            <a href="./launcher.html#pokemonemerald">Pokemon Emerald</a><br>
-            <a href="./launcher.html#pokemongreen">Pokemon Leaf Green</a><br>
-            <a href="./launcher.html#pokemonred">Pokemon Fire Red</a><br>
-            <a href="./launcher.html#mysteryred">Pokemon Mystery Dungeon Red</a><br>
-            <a href="./launcher.html#pokemonruby">Pokemon Ruby</a><br>
-            <a href="./launcher.html#pokemonsapphire">Pokemon Sapphire</a><br>
-            <a href="./launcher.html#gba_video_pokemon_1">Pokemon Video Show Pak 1</a><br>
-            <a href="./launcher.html#gba_video_pokemon_2">Pokemon Video Show Pak 2</a><br>
-            <a href="./launcher.html#gba_video_pokemon_3">Pokemon Video Show Pak 3</a><br>
-            <a href="./launcher.html#gba_video_pokemon_4">Pokemon Video Show Pak 4</a><br>
+            <a class="game" href="./launcher.html#pacman_world">Pacman World</a><br>
+            <a class="game" href="./launcher.html#pacman_world2">Pacman World 2</a><br>
+            <a class="game" href="./launcher.html#pokemonemerald">Pokemon Emerald</a><br>
+            <a class="game" href="./launcher.html#pokemongreen">Pokemon Leaf Green</a><br>
+            <a class="game" href="./launcher.html#pokemonred">Pokemon Fire Red</a><br>
+            <a class="game" href="./launcher.html#mysteryred">Pokemon Mystery Dungeon Red</a><br>
+            <a class="game" href="./launcher.html#pokemonruby">Pokemon Ruby</a><br>
+            <a class="game" href="./launcher.html#pokemonsapphire">Pokemon Sapphire</a><br>
+            <a class="game" href="./launcher.html#gba_video_pokemon_1">Pokemon Video Show Pak 1</a><br>
+            <a class="game" href="./launcher.html#gba_video_pokemon_2">Pokemon Video Show Pak 2</a><br>
+            <a class="game" href="./launcher.html#gba_video_pokemon_3">Pokemon Video Show Pak 3</a><br>
+            <a class="game" href="./launcher.html#gba_video_pokemon_4">Pokemon Video Show Pak 4</a><br>
             <strong>S</strong><br>
-            <a href="./launcher.html#sonic_advance">Sonic Advance</a><br>
-            <a href="./launcher.html#sonic_advance2">Sonic Advance 2</a><br>
-            <a href="./launcher.html#sonic_advance3">Sonic Advance 3</a><br>
-            <a href="./launcher.html#sonicbattle">Sonic Battle</a><br>
-            <a href="./launcher.html#sonicpinball">Sonic Pinball</a><br>
-            <a href="./launcher.html#spyro_adventure">Spyro Adventure</a><br>
-            <a href="./launcher.html#spyro_ice">Spyro: Season of Ice</a><br>
-            <a href="./launcher.html#spyro_flame">Spyro 2: Season of Flame</a><br>
-            <a href="./launcher.html#supermarioadvance">Super Mario Advance</a><br>
-            <a href="./launcher.html#supermarioadvance2">Super Mario Advance 2</a><br>
-            <a href="./launcher.html#supermarioadvance3">Super Mario Advance 3</a><br>
-            <a href="./launcher.html#supermarioadvance4">Super Mario Advance 4</a><br>
-            <a href="./launcher.html#supermonkeyballjr">Super Monkey Ball Jr</a><br>
-            <a href="./launcher.html#super_street_fighter_2_turbo_revival">Super Street Fighter II: Turbo Revival</a><br>
-            <a href="./launcher.html#super_street_fighter_3_alpha">Super Street Fighter III: Alpha</a><br>
+            <a class="game" href="./launcher.html#sonic_advance">Sonic Advance</a><br>
+            <a class="game" href="./launcher.html#sonic_advance2">Sonic Advance 2</a><br>
+            <a class="game" href="./launcher.html#sonic_advance3">Sonic Advance 3</a><br>
+            <a class="game" href="./launcher.html#sonicbattle">Sonic Battle</a><br>
+            <a class="game" href="./launcher.html#sonicpinball">Sonic Pinball</a><br>
+            <a class="game" href="./launcher.html#spyro_adventure">Spyro Adventure</a><br>
+            <a class="game" href="./launcher.html#spyro_ice">Spyro: Season of Ice</a><br>
+            <a class="game" href="./launcher.html#spyro_flame">Spyro 2: Season of Flame</a><br>
+            <a class="game" href="./launcher.html#supermarioadvance">Super Mario Advance</a><br>
+            <a class="game" href="./launcher.html#supermarioadvance2">Super Mario Advance 2</a><br>
+            <a class="game" href="./launcher.html#supermarioadvance3">Super Mario Advance 3</a><br>
+            <a class="game" href="./launcher.html#supermarioadvance4">Super Mario Advance 4</a><br>
+            <a class="game" href="./launcher.html#supermonkeyballjr">Super Monkey Ball Jr</a><br>
+            <a class="game" href="./launcher.html#super_street_fighter_2_turbo_revival">Super Street Fighter II: Turbo Revival</a><br>
+            <a class="game" href="./launcher.html#super_street_fighter_3_alpha">Super Street Fighter III: Alpha</a><br>
             <strong>T</strong><br>
-            <a href="./launcher.html#tales_of_phantasia">Tales of Phantasia</a><br>
-            <a href="./launcher.html#tak2_staff_of_dreams">Tak 2: The Staff of Dreams</a><br>
-            <a href="./launcher.html#tmnt">Teenage Mutant Ninja Turtles</a><br>
-            <a href="./launcher.html#tetris_worlds">Tetris Worlds</a><br>
-            <a href="./launcher.html#sims_bustin_out">The Sims: Bustin &#39; Out</a><br>
-            <a href="./launcher.html#sims2">The Sims 2</a><br>
-            <a href="./launcher.html#simpsons">The Simpsons: Road Rage</a><br>
-            <a href="./launcher.html#turok_evolution">Turok Evolution</a><br>
-            <a href="./launcher.html#zelda_past">The Legend of Zelda: A Link to the Past</a><br>
-            <a href="./launcher.html#zelda_minish">The Legend of Zelda: The Minish Cap</a><br>
+            <a class="game" href="./launcher.html#tales_of_phantasia">Tales of Phantasia</a><br>
+            <a class="game" href="./launcher.html#tak2_staff_of_dreams">Tak 2: The Staff of Dreams</a><br>
+            <a class="game" href="./launcher.html#tmnt">Teenage Mutant Ninja Turtles</a><br>
+            <a class="game" href="./launcher.html#tetris_worlds">Tetris Worlds</a><br>
+            <a class="game" href="./launcher.html#sims_bustin_out">The Sims: Bustin &#39; Out</a><br>
+            <a class="game" href="./launcher.html#sims2">The Sims 2</a><br>
+            <a class="game" href="./launcher.html#simpsons">The Simpsons: Road Rage</a><br>
+            <a class="game" href="./launcher.html#turok_evolution">Turok Evolution</a><br>
+            <a class="game" href="./launcher.html#zelda_past">The Legend of Zelda: A Link to the Past</a><br>
+            <a class="game" href="./launcher.html#zelda_minish">The Legend of Zelda: The Minish Cap</a><br>
             <strong>W</strong><br>
-            <a href="./launcher.html#warioland4">Wario Land 4</a><br>
-            <a href="./launcher.html#wario_ware">Wario Ware Inc</a><br>
+            <a class="game" href="./launcher.html#warioland4">Wario Land 4</a><br>
+            <a class="game" href="./launcher.html#wario_ware">Wario Ware Inc</a><br>
             </p>
             </div>
     </body>
