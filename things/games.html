@@ -179,7 +179,19 @@
    margin: 16px 16px;
    padding: 0 0;
    }
-
+   
+   .dangerzone {
+   margin: 16px 16px;
+   padding: 0 0;
+   border-radius: 12px; 
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+   transition-duration: 0.5s;
+   }
+   
+   .dangerzone:hover {
+   border: 2px solid #f44336;
+   }
+   
    .show {
      background-color: #1B2B44;
      border-radius: 12px; 
@@ -189,7 +201,40 @@
      width: 100%;
      height: auto 0;
      overflow: hidden;
-     margin-bottom: 16px;
+   }
+      
+   .warning {
+   color: #b00000;
+   font-family: "Century Gothic", "Monospace";
+   text-align: center;
+   }
+      
+   .wtext {
+   color: #c9c7c7;
+   font-family: "Century Gothic", "Monospace";
+   text-align: center;
+   }
+      
+   .welcome {
+   color: #C3E0E5;
+   font-family: "Century Gothic", "Monospace";
+   text-align: center;
+   }
+     
+   .credits {
+   color: #c9c7c7;
+   font-family: "Century Gothic", "Monospace";
+   font-size: 10px;
+   text-align: left;
+   }
+      
+   .credits.r {
+   text-align: right;
+   }
+   
+   footer {
+   margin: 0;
+   margin-top: auto 0;
    }
    
   ul {
@@ -250,7 +295,8 @@
   
   .link {
     color: white;
-  } 
+  }
+     
    </style>
 
 </head>
@@ -260,7 +306,7 @@
 
 <ul>
   <li><img class="img" src="/things/logo.jpg" alt="Logo" height="44"></li>
-  <li><a class="icon" href="index.html"><span class="material-symbols-outlined">
+  <li><a class="icon" href="/index.html"><span class="material-symbols-outlined">
 home</span></a></li>
   <li><a class="icon" href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">
   forum</span><p class=cc>Social</p></a></li>
@@ -268,9 +314,9 @@ home</span></a></li>
 format_paint</span><p class="cc">Paint</p></a></li>
   <li><a class="icon" href="https://chill-radio.totob12.repl.co/"><span class="material-symbols-outlined">
 radio</span><p class="cc">Radio</p></a></li>
-<li><a class="icon" href="/things/games.html"><span class="material-symbols-outlined">
+<li><a class="icon active" href="/things/games.html"><span class="material-symbols-outlined">
 sports_esports</span><p class="cc">Games</p></a></li>
-<li><a class="icon active" href="/things/sites.html"><span class="material-symbols-outlined">
+<li><a class="icon" href="/things/sites.html"><span class="material-symbols-outlined">
 handyman</span><p class="cc">Random</p></a></li>
   <li><a class="icon right" href="/things/feedback.html"><span class="material-symbols-outlined">
 alternate_email</span></a></li>
@@ -285,7 +331,7 @@ hourglass_empty</span></a></li>
   </a>
   </h1>
 
-   <div class="box">
+  <div class="box">
       <div class="row">
         <div class="column full">
           <div class="show left">
@@ -295,10 +341,10 @@ hourglass_empty</span></a></li>
             <div class="column subrightbisbis">
               <p class="news" style="font-size:14px;margin-bottom:5px;">Highlighted </p>
               <hr style="color: #c3e0e5; margin: 0px 16px; background-color: #c3e0e5;border-width:0;height:1.5px;">
-              <h2 class="news" style="color:white;"><strong>TOTOB12 AI</strong></h2>
-              <p class="news">Discuss with a real AI. Recommended if you have no friends !</p>
+              <h2 class="news" style="color:white;"><strong>PLAY MINECRAFT JAVA 1.17 IN YOUR BROWSER FOR FREE!</strong></h2>
+              <p class="news">Precision Client allow you to play Java Minecraft 1.17. You can also play in multiplayer using opened to LAN worlds (need of being on the same network).</p>
               <button class="b2" style="float: left;"
-                onclick="window.location.href='/things/ai-chat.html">Go</button>
+                onclick="window.location.href='https://totob12.github.io/things/game/projects/precision-client/index.html';">Play</button>
             </div>
           </div>  
         </div>
@@ -310,59 +356,30 @@ hourglass_empty</span></a></li>
         <div class="column left bis">
           <div class="show left">
             <div class="column subleft">
-              <h2>Windows 96</h2>
-              <p>How was windows before ? Experience it in your browser !</p>
-              <button class="b2" onclick="window.location.href='https://windows96.net/';">Go</button>
+              <h2>Classic games</h2>
+              <p>Access a diversity of free games of every kind. You might find your favorite game reproduced !</p>
+              <button class="b2" onclick="window.location.href='/things/game/index.html';">Go</button>
             </div>
             <div class="column subright">
-              <span class="material-symbols-outlined" style="font-size:180px;">desktop_windows</span>
-            </div>
-          </div> 
-          <div class="show left">
-            <div class="column subleft">
-              <h2>Linux</h2>
-              <p>How Linux looks like ? Experience it in your browser !</p>
-              <button class="b2" onclick="window.location.href='/things/linux.html';">Go</button>
-            </div>
-            <div class="column subright">
-              <span class="material-symbols-outlined" style="font-size:180px;">code_blocks</span>
+              <span class="material-symbols-outlined" style="font-size:180px;">collections_bookmark</span>
             </div>
           </div>  
         </div>
         <div class="column right bis">
           <div class="show left">
             <div class="column subleftbis">
-              <span class="material-symbols-outlined" style="font-size:180px;">lock_open</span>
+              <span class="material-symbols-outlined" style="font-size:180px;">videogame_asset</span>
             </div>
             <div class="column subrightbis">
-              <h2>Unblocked browser</h2>
-              <p>Unrestricted browser in your browser !</p>
-              <button class="b2" onclick="window.location.href='/things/browser.html';">Go</button>
+              <h2>Retro games</h2>
+              <p>Play famous arcade games like Mortal Kombat, Kirby, Sonic, Mario, Pokemon and much more ! </p>
+              <button class="b2" onclick="window.location.href='/things/GBA/index.html';">Go</button>
             </div>
           </div>  
-          <div class="show left">
-            <div class="column subleftbis">
-              <span class="material-symbols-outlined" style="font-size:180px;">psychology</span>
-            </div>
-            <div class="column subrightbis">
-              <h2>Totob12 AI</h2>
-              <p>Speak with an AI !</p>
-              <button class="b2" onclick="window.location.href='/things/ai-chat.html';">Go</button>
-            </div>
-          </div> 
-          <div class="show left">
-            <div class="column subleftbis">
-              <span class="material-symbols-outlined" style="font-size:180px;">vpn_lock</span>
-            </div>
-            <div class="column subrightbis">
-              <h2>Holy</h2>
-              <p>Access blocked sites in new tab !</p>
-              <button class="b2" onclick="window.location.href='/things/holy.html';">Go</button>
-            </div>
-          </div> 
         </div>
       </div>
 </div> 
+        
    
 </div>
 
