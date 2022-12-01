@@ -11,6 +11,7 @@
      
   <script type="text/javascript" src="/things/cookies/popper.js"></script><script> window.start.init({Palette:"palette6",Mode:"floating right",Theme:"classic",Message:"This website uses cookies to ensure you get the best experience on our website.",ButtonText:"Got it!",Time:"2",})</script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
    <style>
    
    body {
@@ -23,13 +24,13 @@
    
    h2 {
    color: #C3E0E5;
-   font-family: "Century Gothic", "Monospace";
+   font-family: "Montserrat";
    margin: 16px 16px;
    }
    
    p {
    color: #C3E0E5;
-   font-family: "Century Gothic", "Monospace";
+   font-family: "Montserrat";
    margin: 16px 16px;
    }
    
@@ -47,7 +48,7 @@
    cursor: pointer; 
    opacity: 1; 
    color: white;
-   font-family: "Century Gothic", "Monospace";
+   font-family: "Montserrat";
    } 
    
    button:hover { 
@@ -69,12 +70,24 @@
    width: 20%;
    box-shadow: none; 
    }
+
+   .b2:hover { 
+   background-color: #41729F; 
+   border: 2px solid #1B2B44;
+   }
    
    .w1 { 
    background-color: #f44336; 
    border: 2px solid black;
    width: 100%;
    }  
+
+   .w1:hover { 
+   background-color: #212121; 
+   border: 2px solid #f44336; 
+   width: 100%;
+   color: #f44336;;
+   }
    
    .w2 { 
    background-color: #212121; 
@@ -82,16 +95,34 @@
    width: 100%;
    color: #f44336;
    } 
+
+   .w2:hover { 
+   background-color: #f44336; 
+   border: 2px solid black;
+   width: 100%;
+   color: white;
+   }  
+
    
    .title { 
    background-color: #274472;
    color: #C3E0E5;
    margin: 0px; 
    padding: 16px 16px;
-   font-family: "Century Gothic", "Monospace";
-   font-size: 64px;
+   font-family: "Montserrat";
    text-align: center;
    } 
+
+   .titleimg {
+    width: 500px;
+    align: center;
+   }
+
+    @media only screen and (max-width: 550px) {
+      .titleimg {
+        width: 100%;
+      }
+    }
 
    .column {
    width: 49.5%;
@@ -159,8 +190,9 @@
 }
   
   @media only screen and (max-width: 950px) {
-  .subright, .subleft, .subleftbis, .subrightbis, .subrightbisbis, .subleftbisbis {
+  .subright, .subleft, .subleftbis, .subrightbis, .subrightbisbis, .subleftbisbis, .column.left.bis, .column.right.bis {
     width: 100%;
+    margin-bottom: 16px;
   }
 }
 
@@ -187,12 +219,28 @@
    margin: 16px 16px;
    padding: 0 0;
    border-radius: 12px; 
-   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+   box-shadow: 0 0 16px 2px red; 
    transition-duration: 0.5s;
+   box-sizing: border-box;
+   border: 2px solid #f44336;
    }
    
    .dangerzone:hover {
    border: 2px solid #f44336;
+   box-shadow: 0 0 16px 2px red; 
+   box-shadow: inset 0 0 16px 2px red, 0 0 16px 2px red; 
+   animation: warning 1s, livewarning 1s infinite;
+   }
+
+   @keyframes warning {
+     0% { border: 2px solid red; } 
+     100% { border: 2px solid #f44336; }
+   }
+
+  @keyframes livewarning {
+     0% { box-shadow: inset 0 0 16px 2px red, 0 0 16px 2px red; } 
+     50% { box-shadow: inset 0 0 16px 4px red, 0 0 16px 4px red; }
+     100% { box-shadow: inset 0 0 16px 2px red, 0 0 16px 2px red; }
    }
    
    .show {
@@ -204,29 +252,36 @@
      width: 100%;
      height: auto 0;
      overflow: hidden;
+     box-sizing: border-box;
+     border-radius: 12px;   
    }
+
+    .show:hover{
+     background-color: #203352;
+   } 
       
    .warning {
    color: #b00000;
-   font-family: "Century Gothic", "Monospace";
+   font-family: "Montserrat";
    text-align: center;
+   margin: 16px 16px;
    }
       
    .wtext {
    color: #c9c7c7;
-   font-family: "Century Gothic", "Monospace";
+   font-family: "Montserrat";
    text-align: center;
    }
       
    .welcome {
    color: #C3E0E5;
-   font-family: "Century Gothic", "Monospace";
+   font-family: "Montserrat";
    text-align: center;
    }
      
    .credits {
    color: #c9c7c7;
-   font-family: "Century Gothic", "Monospace";
+   font-family: "Montserrat";
    font-size: 10px;
    text-align: left;
    }
@@ -246,7 +301,7 @@
   padding: 0;
   overflow: hidden;
   background-color: #41729F;
-  font-family: "Century Gothic", "Monospace";
+  font-family: "Montserrat";
   }
 
   li a {
@@ -299,6 +354,105 @@
   .link {
     color: white;
   }
+
+  .dropbtn {
+  background-color: #41729F;
+  color: #c9c7c7;
+  padding: 10px 8px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 150;
+  border-radius: 0px;  
+  transition-duration: 0s;
+  box-shadow: none; 
+  width: 45; 
+  opacity: 1; 
+  text-align: right;
+}
+
+.dropdown {
+  position: relative;
+  display: none;
+  z-index: 150;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #5885AF;
+  box-shadow: 0px 500px 0px 500px rgba(88, 133, 175, 1);
+  z-index: 150;
+  position: relative;
+  min-width: 100%; 
+  text-align: left;
+  padding-bottom: 16px;
+}
+
+.dropdown-content a {
+  background-color: #5885AF;
+  color: #c9c7c7;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  z-index: 150;
+  opacity: 1;
+  transition-duration: 0s;
+  text-align: center;
+}
+
+.dropdown-content a:hover:not(.blanka) {
+  background-color:rgba(195, 224, 229, 0.5);
+  color: black;
+  position: relative;
+  z-index: 150;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  position: relative;
+  z-index: 150;
+  opacity: 1;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #5885AF;
+  position: relative;
+  z-index: 150;
+  opacity: 1;
+}
+
+.dropdowncc {
+  padding-top: 4px;
+  font-size: 16px;
+}
+
+  @media only screen and (max-width: 650px) {
+  .dropdown {
+    display: inline-block;
+    }
+  }
+
+    .screen {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 650px) {
+  .screen {
+    display: none;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+  .mobile {
+    display: block;
+    }
+  }
      
    </style>
    
@@ -310,29 +464,42 @@
   <li><img class="img" src="/things/logo.jpg" alt="Logo" height="44"></li>
   <li><a class="icon active" href="index.html"><span class="material-symbols-outlined">
 home</span></a></li>
-  <li><a class="icon" href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">
+  <li class="screen"><a class="icon" href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">
   forum</span><p class=cc>Social</p></a></li>
-<li><a class="icon" href="/things/inpainting-forward.html"><span class="material-symbols-outlined">
+<li class="screen"><a class="icon" href="/things/inpainting-forward.html"><span class="material-symbols-outlined">
 format_paint</span><p class="cc">Paint</p></a></li>
-  <li><a class="icon" href="/things/radio.html"><span class="material-symbols-outlined">
+  <li class="screen"><a class="icon" href="/things/radio.html"><span class="material-symbols-outlined">
 radio</span><p class="cc">Radio</p></a></li>
-<li><a class="icon" href="/things/games.html"><span class="material-symbols-outlined">
+<li class="screen"><a class="icon" href="/things/games.html"><span class="material-symbols-outlined">
 sports_esports</span><p class="cc">Games</p></a></li>
-<li><a class="icon" href="/things/sites.html"><span class="material-symbols-outlined">
+<li class="screen"><a class="icon" href="/things/sites.html"><span class="material-symbols-outlined">
 handyman</span><p class="cc">Random</p></a></li>
-  <li><a class="icon right" href="/things/feedback.html"><span class="material-symbols-outlined">
+  <li class="screen"><a class="icon right" href="/things/feedback.html"><span class="material-symbols-outlined">
 alternate_email</span></a></li>
-<li><a class="icon right" href="/things/countdown.html"><span class="material-symbols-outlined">
+<li class="screen"><a class="icon right" href="/things/countdown.html"><span class="material-symbols-outlined">
 hourglass_empty</span></a></li>
+    <div class="dropdown" style="float:right;">
+  <button class="dropbtn"><span class="material-symbols-outlined">menu</span></button>
+  <div class="dropdown-content">
+  <a href="https://totob12.github.io/index.html"><span class="material-symbols-outlined">home</span><div class="dropdowncc">Home</div></a>
+  <a class="blanka" href=""></a>
+  <a href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">forum</span><div class="dropdowncc">Social</div></a>
+  <a href="https://totob12.github.io/things/inpainting-forward.html"><span class="material-symbols-outlined">format_paint</span><div class="dropdowncc">Paint</div></a>
+  <a href="https://chill-radio.totob12.repl.co/"><span class="material-symbols-outlined">radio</span><div class="dropdowncc">Radio</div></a>
+  <a href="https://totob12.github.io/things/games.html"><span class="material-symbols-outlined">sports_esports</span><div class="dropdowncc">Games</div></a>
+  <a href="https://totob12.github.io/things/sites.html"><span class="material-symbols-outlined">handyman</span><div class="dropdowncc">Random</div></a>
+  <a class="blanka" href=""></a>
+  <a href="https://totob12.github.io/things/countdown.html"><span class="material-symbols-outlined">hourglass_empty</span><div class="dropdowncc">Countdown</div></a>
+  <a href="https://totob12.github.io/things/feedback.html"><span class="material-symbols-outlined">alternate_email</span><div class="dropdowncc">Contact</div></a>
+  </div>
+</div>
 
   </ul>
            
   <h1 class="title">
-  <img class="titleimg" src="/things/totob12title2.png" align="center" width=30%>
+  <!--<img class="titleimg" src="/things/totob12title2.png" align="center" width=30%>-->
+  <img class="titleimg" src="totob12title2.png">
   </h1>
-
-<h3 class="welcome">Welcome to TotoB12 website! Feel free to hang around.<br/>
-</h3>
 
 <div class="box">
       <div class="row">
@@ -344,8 +511,8 @@ hourglass_empty</span></a></li>
             <div class="column subrightbisbis">
               <p class="news" style="font-size:14px;margin-bottom:5px;">Newsletter</p>
               <hr style="color: #c3e0e5; margin: 0px 16px; background-color: #c3e0e5;border-width:0;height:1.5px;">
-              <h2 class="news" style="color:white;"><strong>PLAY MINECRAFT JAVA 1.17 IN YOUR BROWSER FOR FREE!</strong></h2>
-              <p class="news">Precision Client allow you to play Java Minecraft 1.17. You can also play in multiplayer using opened to LAN worlds (need of being on the same network). Play <a class="link" href="https://totob12.github.io/things/game/projects/precision-client/index.html">here</a>!</p>
+              <h2 class="news" style="color:white;"><strong>TOTOB12 CHAT BIG UPDATE</strong></h2>
+              <p class="news">The chat has been improved to allow sending pictures, and to have a profile picture! A better look has also been added. Check it out <a class="link" href="https://TotoB12-Chat.totob12.repl.co/">here</a>!</p>
             </div>
           </div>  
         </div>
@@ -434,7 +601,7 @@ hourglass_empty</span></a></li>
 </div> 
 
 <div class="box dangerzone">
-<h1 class="warning">Dangerous zone!</h1>
+<h1 class="warning">Dangerous zone !</h1>
 <p class="wtext">This is now your responsability! Pay attention.</p>
 <div class="box">
 <button class="w2" onclick="window.location.href='/things/virus.html';">
