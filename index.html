@@ -141,10 +141,13 @@
   <h1>DANGEROUS ZONE</h1>
   <div class="zone-wrap">
     <div>
-      <button>CRASH BROWSER</button>
-      <button>CRASH DEVICE</button>
+      <button onclick="window.location.href='/things/crash.html';">
+CRASH BROWSER</button>
+      <button onclick="while (true) { var x = new Array(1000000000); }">
+CRASH DEVICE</button>
     </div>
-    <button>VIRUS DOWNLOAD PAGE</button>
+    <button onclick="window.location.href='/things/virus.html';">
+DOWNLOAD VIRUS</button>
   </div>
 </div>
   
