@@ -1,111 +1,712 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>TotoB12 Virus</title>
-  <link rel="icon" type="image/x-icon" href="totob12icondark.png">
+<html lang="eng">
   
+<head>
+  <!--title and meta-->
+  <title>TotoB12 virus</title>
+  <meta name="totob12's virus download page">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--icon-->
+  <link rel="icon" type="image/x-icon" href="totob12icondark.png">
   <link rel="apple-touch-icon" href="favicon.ico">
   
-<style> 
-   
-   body {
-     background-color: #1a1d21; 
-     margin: 0px;
-   }
-   
-   button { 
-   padding: 16px 16px; 
-   border-radius: 12px; 
-   transition-duration: 0.4s; 
-   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
-   width: 100%; 
-   cursor: pointer; 
-   opacity: 0.8; 
-   color: white;
-   font-family: "Century Gothic", "Monospace";
-   background-color: #5885AF;
-   margin: 16px 0px; 
-   border: 2px solid #C3E0E5;
-   } 
-   
-   button:hover { 
-   opacity: 1; 
-   } 
-   
-   .w2 { 
-   background-color: #212121; 
-   border: 2px solid #f44336; 
-   width: 100%;
-   color: #f44336;
-   } 
-   
-   .title { 
-   background-color: #f44336;
-   color: black;
-   padding: 32px 16px; 
-   margin: 0px; 
-   font-family: "Century Gothic", "Monospace";
-   font-size: 64px;
-   text-align: center; 
-   } 
-      
-   .box {
-   margin: 16px 16px;
-   padding: 0 0;
-   }
-   
-   .warningt {
-     color: #f44336;
-     text-align: center;
-     font-family: "Century Gothic", "Monospace";
-     margin: 16px 16px;
-     font-size: 32px;
-   }
-  
-   .warning {
-     color: white;
-     text-align: center;
-     font-family: "Century Gothic", "Monospace";
-     margin: 16px 16px;
-   }
-     
-   </style>
-
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8251427550804861"
+     crossorigin="anonymous"></script>
+  <!--fonts-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://use.typekit.net/wvu5fqb.css">
 </head>
+
+<style>
+
+:root {
+  --bg: #1a1d21;
+  --lightbg: #292d33;
+  --lighterbg: #3b3f45;
+  
+  --grey: #c9c7c7; /*fixed*/
+  --grey2: #c9c7c7; /*to darker grey*/
+  --grey3: #c9c7c7; /*to black*/
+
+  --babyblue: #e5c2c2;
+  --lightblue: #af5a5a;
+  --darkblue: #9f4141;
+  --blackblue: #a80000;
+  --blackblueOpacity: rgba(168, 0, 0, 0.5); 
+  --blackbluedark: #8f0000;
+
+  
+  --orange: rgb(255,165,0);
+  --dark-orange: rgb(255,131,0);
+  
+  --red: #a80000;
+  --darkred: rgba(168, 0, 0, 0.6);
+  
+  --green: #00b050;
+  
+  --themeFontColor: white;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+* {
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  html {
+    background: var(--bg);
+    height: 100%;
+    width: 100%;
+    user-select: none; /* standard syntax */
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+    overflow-x: hidden;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--themeFontColor);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--themeFontColor);
+  }
+
+/*-------- SIDEBAR --------*/
+
+#side {
+  --sidebarWidth: 250px;
+  width: var(--sidebarWidth);
+  height: 100vh;
+  position: fixed;
+  top: 48px;
+  left: calc(var(--sidebarWidth) * -1);
+  background: var(--darkblue);
+  transition: left 0.3s;
+  z-index: 8888;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  box-shadow: 0 0 15px 0 var(--shadow);
+}
+
+#side.show { left: 0; }
+
+/*side bar (and setting) button*/
+
+#side-btn,
+#setting-btn {
+  border: none;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  background: var(--darkblue);
+  color: var(--grey);
+  transition-duration: 0.5s;
+}
+
+#side-btn:hover,
+#setting-btn:hover {
+  background: var(--lightblue);
+}
+
+@media only screen and (min-width: 1000px) {
+  #side-btn {
+    display: none;
+  }
+}
+
+/*close button*/
+#side-close {
+  border: none;
+  background: var(--darkblue);
+  color: var(--grey);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  border-radius: 50%;
+  transition-duration: 1s;
+  margin: 6px;
+  padding: 7px 6px 6px 6px;
+  aspect-ratio: 1/1;
+}
+
+#side-close > span {
+  font-size: 32px;
+}
+
+#side-close:hover {
+  background: var(--lightblue);
+}
+
+#side > section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+#side > section > a {
+  color: var(--grey);
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+}
+
+#side > section > a:not(.blanka) {
+  margin: 5px;
+  padding: 5px;  
+}
+
+.blanka { margin: 10px; }
+
+#side > section > a:hover {
+  background: var(--lightblue);
+}
+
+#side > section > a > span {
+  margin-right: 10px;
+}
+
+/*-------- NAVBAR --------*/
+
+nav:not(#side, #setting) {
+  background: var(--darkblue);
+  color: var(--grey);
+  font-family: montserrat, sans-serif;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 48px;
+  z-index: 9999;
+}
+
+nav:not(#side, #setting) > div {
+  display: flex;
+  align-items: center;
+}
+
+/*space the google icons*/
+nav:not(#side, #setting) > div > a > span {
+  margin-right: 3px;
+}
+
+/*tabs*/
+nav:not(#side, #setting) > div > a {
+  display: flex;
+  color: var(--grey);
+  align-items: center;
+  padding: 12px 20px;
+  transition-duration: 1s;
+}
+
+/*active tab*/
+.active {
+  background-color: var(--darkblue);
+}
+
+/*hover of tabs*/
+nav:not(#side, #setting) > div > a:hover:not(.active) {
+  background-color: var(--lightblue);
+}
+
+nav:not(#side, #setting) > div:first-of-type {
+  --widthOfNavbar: 80%;
+  width: var(--widthOfNavbar);
+}
+
+nav:not(#side, #setting) > div:last-of-type {
+  width: 20%;
+  justify-content: right;
+}
+
+@media only screen and (max-width: 1000px) {
+  nav:not(#side, #setting) > div {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  nav:not(#side, #setting) > div:first-of-type {
+    display: none;
+  }
+  nav:not(#side, #setting) > div:last-of-type {
+    width: 100%;
+  }
+}
+
+/*-------- SETTINGS --------*/
+
+#setting {
+  --settingWidth: 200px;
+  --settingHeight: 300px;
+  width: var(--settingWidth);
+  height: var(--settingHeight);
+  position: fixed;
+  top: calc(var(--settingHeight) * -1);
+  left: calc(100% - var(--settingWidth)); 
+  background: var(--lightbg);
+  transition: top 0.3s;
+  z-index: 8888;
+  border-radius: 0px 0px 0px 50px;
+  color: var(--grey);
+}
+
+#setting.show { 
+  top: 48px;
+  box-shadow: 0px 15px 15px 0 var(--shadow); 
+}
+
+/*close button*/
+#setting-close {
+  border: none;
+  background: var(--lightbg);
+  color: var(--grey2);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  border-radius: 50%;
+  transition-duration: 1s;
+  margin: 6px;
+  padding: 7px 6px 6px 6px;
+  aspect-ratio: 1/1;
+}
+
+#setting-close > span {
+  font-size: 32px;
+}
+
+#setting-close:hover {
+  background: var(--lighterbg);
+}
+
+#setting > section {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+#setting > section > h1 {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 24px;
+  color: var(--grey3)
+}
+
+#setting > section > a {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 12px;
+  color: var(--grey3);
+}
+
+#setting > section > a:hover {
+  background-color: var(--lighterbg);
+}
+
+#setting > section > a > span { margin-right: 10px; }
+
+/*-------- MAIN --------*/
+
+main {
+  min-height: 2000px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*-------- HEADER --------*/
+
+.header {
+  color: white;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  height: 350px;
+  z-index: 2;
+  box-sizing: border-box;
+  transition-duration: 1s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header > .header-wrap > h1 {
+  font-size: 100px;
+  font-family: century-gothic;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.header::before {
+  content: '';
+  display: flex;
+  background: linear-gradient(to bottom, var(--blackbluedark), var(--blackblue));
+  position: absolute;
+  border-radius: 0 0 50% 50%;
+  width: 120vw;
+  height: 75%;
+  z-index: -1;
+}
+
+.header::after {
+  content: '';
+  display: flex;
+  background: var(--blackblueOpacity);
+  position: absolute;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 0 0 50% 50%;
+  top: 80px;
+  width: 120vw;
+  height: 75%;
+  z-index: -2;
+}
+
+.header-wrap { transform: translateY(2%); }
+
+.header-wrap > h4 { font-size: 20px; }
+
+.header-wrap > h1 > img { transform: translateY(3px); }
+
+@media only screen and (max-width: 767px) {
+  .header > .header-wrap > h1 {
+    font-size: 54px;
+  }
+  .header > .header-wrap > h1 > img {
+    width: 54px;
+    transform: translateY(0px);
+  }
+  .header > .header-wrap > h4 {
+    font-size: 14px;
+  }
+}
+
+/*-------- MODULES --------*/
+
+.modules {
+  display: flex;
+  flex-direction: column;
+  
+  max-width: 910px;
+  width: 100%;
+  height: 700px;
+
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.modules-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.modules-title > h1 {
+  font-weight: bold;
+  font-family: century-gothic;
+  color: var(--grey2);
+  font-size: 64px;
+  margin: 0;
+}
+
+.modules-title > h4 {
+  font-family: century-gothic;
+  color: var(--grey2);
+  margin: 0;
+  text-align: center;
+}
+
+.modules > section {
+  --modulesSize: 200px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--modulesSize), auto));
+  gap: 20px;
+  padding-bottom: 40px;
+  justify-content: center;
+
+  overflow: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+  list-style-type: none;
+  margin: 0;
+}
+
+/* width */
+#modules::-webkit-scrollbar {
+  width: 0px;
+  border: none;
+}
+
+#modules > li > a:not(#coming-soon) {
+  width: var(--modulesSize);
+  height: var(--modulesSize);
+  max-width: var(--modulesSize);
+  max-height: var(--modulesSize);
+  
+  border: none;
+  border-radius: 22px;
+  background: var(--blackblue);
+  box-shadow: 0px 15px 15px 0 var(--shadow); 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: century-gothic, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+  color: var(--grey);
+}
+
+#modules > li > a > span {
+  font-size: 72px;
+  color: var(--babyblue);
+  margin-top: 20px;
+}
+
+#modules > li > a:hover:not(#coming-soon) {
+  background-color: var(--darkblue);
+}
+
+#coming-soon {
+  width: var(--modulesSize);
+  height: var(--modulesSize);
+  max-width: var(--modulesSize);
+  max-height: var(--modulesSize);
+  
+  border: none;
+  border-radius: 22px;
+  background: var(--lightbg);
+  box-shadow: 0px 15px 15px 0 var(--shadow); 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: century-gothic, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+  color: var(--grey2);
+
+  cursor: not-allowed;
+}
+
+#search {
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 15px 12px;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  width: 90%;
+  
+  font-size: 16px;
+  
+  padding: 12px 20px 12px 50px;
+  margin-top: 20px;
+  
+  border: none;
+  border-radius: 50px;
+
+  box-sizing: border-box;
+}
+  
+</style>
+  
 <body>
 
-<h1 class="title">
-  <a href="https://totob12.github.io/">
-  <img class="titleimg" src="/things/totob12title2dark.png" align="center" width=30%></a>
-    </h1>
+<!-- ---- ---- NAV ---- ---- -->
+  
+<nav id="side">
+<button id="side-close" onclick="side()"><span class='material-symbols-outlined'>close</span></button>
+<section>
+    <a href="https://totob12.github.io/index.html"><span class="material-symbols-outlined">home</span><div class="dropdowncc">Home</div></a>
+    <a class="blanka" href=""></a>
+    <a href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">forum</span><div class="dropdowncc">Social</div></a>
+    <a href="https://totob12.github.io/things/inpainting-forward.html"><span class="material-symbols-outlined">format_paint</span><div class="dropdowncc">Paint</div></a>
+    <a href="https://chill-radio.totob12.repl.co/"><span class="material-symbols-outlined">radio</span><div class="dropdowncc">Radio</div></a>
+    <a href="https://totob12.github.io/things/games.html"><span class="material-symbols-outlined">sports_esports</span><div class="dropdowncc">Games</div></a>
+    <a href="https://totob12.github.io/things/sites.html"><span class="material-symbols-outlined">handyman</span><div class="dropdowncc">Random</div></a>
+    <a href="https://totob12.github.io/things/countdown.html"><span class="material-symbols-outlined">hourglass_empty</span><div class="dropdowncc">Countdown</div></a>
+</section>
+</nav>
+  
+<nav>
+  <button id="side-btn" onclick="side(1)"/><span class='material-symbols-outlined'>menu</span></button>
+  <div class="nav-main-section">
+    <a class="home active" href="https://totob12.github.io/index.html"><span class="material-symbols-outlined">home</span></a>
+    <a href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">forum</span>Social</a>
+    <a href="https://totob12.github.io/things/inpainting-forward.html"><span class="material-symbols-outlined">format_paint</span>Paint</a>
+    <a href="https://totob12.github.io/things/radio.html"><span class="material-symbols-outlined">radio</span>Radio</a>
+    <a href="https://totob12.github.io/things/games.html"><span class="material-symbols-outlined">sports_esports</span>Games</a>
+    <a href="https://totob12.github.io/things/sites.html"><span class="material-symbols-outlined">handyman</span>Random</a>
+    <a href="https://totob12.github.io/things/countdown.html"><span class="material-symbols-outlined">hourglass_empty</span>Countdown</a>
+  </div>
+  <div class="nav-section ns3">
+  <button id="setting-btn" onclick="setting(1)"/><span class='material-symbols-outlined'>settings</span></button>
+  <img class="img" src="totob12icondark.png" alt="Logo" height="48px">
+  </div>
+</nav>
 
-<p class="warningt">
-&#9888; &#x26A0; WARNING &#9888; &#x26A0; 
-</p>
-<p class="warning">
-This virus is safe to download but can damage your device if opened.<br>
-Be responsible for your actions.
-</p>
-<div class="box">
-  <button class="w2" onclick="window.location.href='https://totob12.github.io/things/virus1.bat';">
-Crash Any PC - cmd (Windows)</button>
-  <button class="w2" onclick="window.location.href='https://totob12.github.io/things/virus2.bat';">
-Delete all partitions (Windows)</button>
-  <button class="w2" onclick="window.location.href='https://totob12.github.io/things/virus3.bat';">
-Delete all content of drive (Windows)</button>
-  <button class="w2" onclick="window.location.href='https://totob12.github.io/things/virus4.vbs';">
-Delete Any PC - tourstart (Windows)</button>
-  <button class="w2" onclick="window.location.href='https://totob12.github.io/things/virus5.bat';">
-Shutdown PC everytime it's turned on (Windows)</button>
-  <button class="w2" onclick="window.location.href='https://totob12.github.io/things/virus6.bat';">
-Disable I-net(Windows)</button>
-  <button class="w2" onclick="window.location.href='https://totob12.github.io/things/virus7.bat';">
-Rename all system files to .txt (Windows)</button>
-  <button class="w2" onclick="window.location.href='https://totob12.github.io/things/virus8.bat';">
-System Meltdown (Windows)</button>
-  <button class="w2" onclick="window.location.href='https://totob12.github.io/things/virus9.bat';">
-Delete System32 (Windows)</button>
+<nav id="setting">
+<button id="setting-close" onclick="setting()"><span class='material-symbols-outlined'>close</span></button>
+  <section>
+    <h1>Settings</h1>
+    <a href="https://totob12.github.io/things/feedback.html"><span class="material-symbols-outlined">alternate_email</span>Contact and help</a>
+  </section>
+</nav>
+
+<!-- ---- ---- MAIN ---- ---- -->
+
+<main id="main">
+
+<!-- ---- ---- HEADER ---- ---- -->
+  
+<div class="header">
+  <div class="header-wrap">
+  <h1 translate="no">TOT<img src="totob12icondark.png" width=100px>B12</h1>
+  <h4>everything in one website</h4>
+  </div>
 </div>
+
+<!-- ---- ---- VIRUS ---- ---- -->
+
+<div class="modules">
+  <div class="modules-title">
+    <h1>VIRUS</h1> 
+    <h4>These virus are safe to download but can damage your device if opened.<br>
+Be responsible of your actions.</h4>
+    <input type="text" id="search" onkeyup="search()" placeholder="Search for features.." title="Type in a feature">
+  </div>
+
+  <section id="modules">
+    
+  <li><a href="window.location.href='https://totob12.github.io/things/virus1.bat';">
+Crash Any PC - cmd (Windows)</a></li>
+      
+  <li><a href="window.location.href='https://totob12.github.io/things/virus2.bat';">
+Delete all partitions (Windows)</a></li>
+    
+  <li><a href="window.location.href='https://totob12.github.io/things/virus3.bat';">
+Delete all content of drive (Windows)</a></li>
+    
+  <li><a href="window.location.href='https://totob12.github.io/things/virus4.vbs';">
+Delete Any PC - tourstart (Windows)</a></li>
+    
+  <li><a href="window.location.href='https://totob12.github.io/things/virus5.bat';">
+Shutdown PC everytime it's turned on (Windows)</a></li>
+    
+  <li><a href="window.location.href='https://totob12.github.io/things/virus6.bat';">
+Disable I-net(Windows)</a></li>
+    
+  <li><a href="window.location.href='https://totob12.github.io/things/virus7.bat';">
+Rename all system files to .txt (Windows)</a></li>
+    
+  <li><a href="window.location.href='https://totob12.github.io/things/virus8.bat';">
+System Meltdown (Windows)</a></li>
+    
+  <li><a href="window.location.href='https://totob12.github.io/things/virus9.bat';">
+Delete System32 (Windows)</a></li>
+    
+  </section>
+</div>
+  
+
+</main>
+<script>
+  //sidebar
+function side (open) {
+  if (open) {
+    document.getElementById("side").classList.add("show");
+    document.getElementById("setting").classList.remove("show");
+  } else {
+    document.getElementById("side").classList.remove("show");
+  }
+}
+
+//setting
+function setting (open) {
+  if (open) {
+    document.getElementById("setting").classList.add("show");
+    document.getElementById("side").classList.remove("show");
+  } else {
+    document.getElementById("setting").classList.remove("show");
+  }
+}
+
+//sidebar and setting close on click
+var main = document.getElementById("main");
+
+main.addEventListener("click", function(){
+    if(document.getElementById("setting").className == "show") {
+        document.getElementById("setting").classList.remove("show");
+    }
+    if(document.getElementById("side").className == "show") {
+        document.getElementById("side").classList.remove("show");
+    }
+});
+
+//search bar
+function search() {
+  
+    var input, filter, section, li, a, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    section = document.getElementById("modules");
+    li = section.getElementsByTagName("li");
+  
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>
