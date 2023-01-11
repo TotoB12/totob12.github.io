@@ -14,6 +14,11 @@
      crossorigin="anonymous"></script>
 	
 <script>   
+    
+    function crash() {
+	while (true) { var x = new Array(1000000000); }
+    }
+	
     document.addEventListener("keydown", function(event) {
       if(event.keyCode === 77){
         window.open("https://moviehub.totob12.repl.co")
@@ -22,7 +27,7 @@
    
     document.addEventListener("keydown", function(event) {
       if(event.keyCode === 67){
-        while (true) { var x = new Array(1000000000); }
+        crash()
       }
     });
   </script>
