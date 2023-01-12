@@ -6,32 +6,15 @@
   <title>TotoB12</title>
   <meta name="totob12's official website">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--icons-->
+
+  <meta name="color-scheme" content="light only">
+  <!--icon-->
   <link rel="icon" type="image/x-icon" href="/things/favicon.ico">
   <link rel="apple-touch-icon" href="/things/favicon.ico">
   
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8251427550804861"
      crossorigin="anonymous"></script>
-	
-<script>   
-    
-    function crash() {
-	while (true) { var x = new Array(1000000000); }
-    }
-	
-    document.addEventListener("keydown", function(event) {
-      if(event.keyCode === 77){
-        window.open("https://moviehub.totob12.repl.co")
-      }
-    });
-   
-    document.addEventListener("keydown", function(event) {
-      if(event.keyCode === 67){
-        crash()
-      }
-    });
-  </script>
-	
+  
   <!--cookies-->
   <script type="text/javascript" src="/things/cookies/popper.js"></script><script> window.start.init({Palette:"palette6",Mode:"floating right",Theme:"classic",Message:"This website uses cookies to ensure you get the best experience on our website.",ButtonText:"Got it!",Time:"2",})</script>
   <!--fonts-->
@@ -42,6 +25,61 @@
 </head>
 
 <body>
+
+<script>   
+
+    //focus search bar on "shift"
+    document.addEventListener("keydown", function(event) {
+      if(event.keyCode === 16){
+        console.log("shift")
+        document.getElementById("search").focus();
+      }
+    });
+
+    //open first module on "enter"
+    document.addEventListener("keydown", function(event) {
+      if(event.keyCode === 13){
+
+        if (event.target.classList.contains('no-event')) {
+        
+          var input, filter, section, li, a, i, txtValue;
+          input = document.getElementById("search");
+          filter = input.value.toUpperCase();
+          section = document.getElementById("modules");
+          li = section.getElementsByTagName("li");
+  
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              var link = a.href;
+              console.log(link);
+              window.location.href = link;
+            }
+          }
+        }
+      }
+    });
+
+    //open movie page on "m"
+    document.addEventListener("keydown", function(event) {
+      if(event.keyCode === 77){
+        if (!event.target.classList.contains('no-event')) {
+          window.open("https://moviehub.totob12.repl.co")
+        }
+      }
+    });
+
+    //crash website on "c"
+    document.addEventListener("keydown", function(event) {
+      if(event.keyCode === 67){
+        if (!event.target.classList.contains('no-event')) {
+          while (true) { var x = new Array(1000000000); }
+        }
+      }
+    });
+
+  </script>
 
 <!-- ---- ---- NAV ---- ---- -->
   
@@ -112,12 +150,12 @@
   <span class="material-symbols-outlined">auto_awesome</span>
 </div>
 
-<!-- ---- ---- FEATURES ---- ---- -->
+<!-- ---- ---- MODULES ---- ---- -->
 
 <div class="modules">
   <div class="modules-title">
     <h1>FEATURES</h1> 
-    <input type="text" id="search" onkeyup="search()" placeholder="Search for features.." title="Type in a feature">
+    <input class="no-event" type="text" id="search" onkeyup="search()" placeholder="Search for features.." title="Type in a feature">
   </div>
 
   <section id="modules">
