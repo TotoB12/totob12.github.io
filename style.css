@@ -492,7 +492,7 @@ main {
   display: flex;
   flex-direction: column;
   
-   max-width: 10000px; /* 910px */
+  max-width: 10000px; /* 910px */
   width: 100%;
   height: 900px; /* 700px */
 
