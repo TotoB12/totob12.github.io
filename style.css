@@ -492,9 +492,9 @@ main {
   display: flex;
   flex-direction: column;
   
-  max-width: 910px;
+  max-width: 100px; /* 910px */
   width: 100%;
-  height: 700px;
+  height: 1000px; /* 700px */
 
   box-sizing: border-box;
   padding: 20px;
@@ -516,7 +516,7 @@ main {
 }
 
 .modules > section {
-  --modulesSize: 300px; /* 200px */
+  --modulesSize: 200px;
   width: 100%;
 
   display: grid;
