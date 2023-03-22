@@ -516,7 +516,7 @@ main {
 }
 
 .modules > section {
-  --modulesSize: 200px;
+  --modulesSize: 300px; /* 200px */
   width: 100%;
 
   display: grid;
