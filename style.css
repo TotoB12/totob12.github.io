@@ -17,8 +17,8 @@
   --blackbluedark: #1d3258;
 
   
-  --orange: rgb(255,75,0); /*255, 165, 0*/
-  --dark-orange: rgb(255,131,0);
+  --orange: rgb(0,200,0); /* 255, 165, 0 */
+  --dark-orange: rgb(0,180,20); /* 255, 131, 0 */
   
   --red: #a80000;
   --darkred: rgba(168, 0, 0, 0.6);
