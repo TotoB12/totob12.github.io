@@ -438,7 +438,7 @@ main {
   
   border-radius: 24px;
   width: 80%;
-  max-width: 500px;
+  max-width: 600px; /* 500 */
   height: 200px;
   margin: 64px;
   margin-top: 96px;
@@ -470,8 +470,7 @@ main {
   margin-top: 25px;
 }
 
-/* 767 */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 767px) {
   .news > section > hr {
     display: none;
   }
