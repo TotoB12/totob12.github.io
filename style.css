@@ -470,7 +470,7 @@ main {
   margin-top: 25px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 867px) {
   .news > section > hr {
     display: none;
   }
