@@ -1,269 +1,260 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>GBA Emulator</title>
-        <link rel="icon" type="image/x-icon" href="/things/favicon.ico">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <meta charset="UTF-8">
-    </head>
+<html lang="eng">
+  
+<head>
+  <!--title and meta-->
+  <title>TotoB12 GBA Emulator</title>
+  <meta name="totob12's official website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="color-scheme" content="light only">
+  <!--icons-->
+  <link rel="icon" type="image/x-icon" href="/things/favicon.ico">
+  <link rel="apple-touch-icon" href="/things/favicon.ico">
+  
+  <!--fonts-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://use.typekit.net/wvu5fqb.css">
+  <!--style-->
+  <link rel="icon" type="image/x-icon" href="/things/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
     
-    <style>
+<style>
+:root{--bg:#1a1d21;--lightbg:#292d33;--lighterbg:#3b3f45;--grey:#c9c7c7;--grey2:#c9c7c7;--grey3:#c9c7c7;--babyblue:#c3e0e5;--lightblue:#5885af;--darkblue:#41729f;--blackblue:#274472;--blackblueOpacity:rgba(39,68,114,.5);--blackbluedark:#1d3258;--newsColor:rgba(0,200,0,.9);--darkNewsColor:rgba(0,160,20,.9);--red:#a80000;--darkred:rgba(168,0,0,.6);--green:#00b050;--themeFontColor:#fff;--shadow:rgba(0,0,0,.4)}*{box-sizing:border-box;font-family:montserrat,sans-serif;font-weight:400;font-style:normal}html{background:var(--bg);height:100%;width:100%;user-select:none;-webkit-user-select:none;-moz-user-select:none;-khtml-user-select:none;-ms-user-select:none;overflow-x:hidden}body{display:flex;flex-direction:column;min-height:100vh;margin:0;color:var(--themeFontColor)}a{text-decoration:none;color:var(--themeFontColor)}#side{--sidebarWidth:250px;width:var(--sidebarWidth);height:100vh;position:fixed;top:48px;left:calc(var(--sidebarWidth)*-1);background:var(--darkblue);transition:left .3s;z-index:8888;display:flex;flex-direction:column;align-items:flex-end;box-shadow:0 0 15px 0 var(--shadow)}
+#side.show{left:0}#side-btn,#setting-btn{border:none;padding:12px 20px;display:flex;align-items:center;background:var(--darkblue);color:var(--grey);transition-duration:.5s}#side-btn:hover,#setting-btn:hover{background:var(--lightblue)}@media only screen and (min-width:1000px){#side-btn{display:none}}#side-close{border:none;background:var(--darkblue);color:var(--grey);display:flex;align-items:center;justify-content:center;text-align:center;border-radius:50%;transition-duration:1s;margin:6px;padding:7px 6px 6px;aspect-ratio:1/1}#side-close>span{font-size:32px}#side-close:hover{background:var(--lightblue)}#side>section{display:flex;flex-direction:column;width:100%;padding:12px;box-sizing:border-box}#side>section>a{color:var(--grey);display:flex;align-items:center;border-radius:12px}#side>section>a:not(.blanka){margin:5px;padding:5px}.blanka{margin:10px}#side>section>a:hover{background:var(--lightblue)}#side>section>a>span{margin-right:10px}nav:not(#side,#setting){background:var(--darkblue);color:var(--grey);font-family:montserrat,sans-serif;position:fixed;display:flex;width:100%;height:48px;z-index:9999}
+nav:not(#side,#setting)>div{display:flex;align-items:center}nav:not(#side,#setting)>div>a>span{margin-right:3px}nav:not(#side,#setting)>div>a{display:flex;color:var(--grey);align-items:center;padding:12px 20px;transition-duration:1s}.active{background-color:var(--darkblue)}nav:not(#side,#setting)>div>a:hover:not(.active){background-color:var(--lightblue)}nav:not(#side,#setting)>div:first-of-type{--widthOfNavbar:80%;width:var(--widthOfNavbar)}nav:not(#side,#setting)>div:last-of-type{width:20%;justify-content:right}@media only screen and (max-width:1000px){nav:not(#side,#setting)>div{width:50%}}@media only screen and (max-width:1000px){nav:not(#side,#setting)>div:first-of-type{display:none}nav:not(#side,#setting)>div:last-of-type{width:100%}}#setting{--settingWidth:200px;--settingHeight:300px;width:var(--settingWidth);height:var(--settingHeight);position:fixed;top:calc(var(--settingHeight)*-1);left:calc(100% - var(--settingWidth));background:var(--lightbg);transition:top .3s;z-index:8888;border-radius:0 0 0 50px;color:var(--grey)}
+#setting.show{top:48px;box-shadow:0px 15px 15px 0 var(--shadow)}#setting-close{border:none;background:var(--lightbg);color:var(--grey2);display:flex;align-items:center;justify-content:center;text-align:center;border-radius:50%;transition-duration:1s;margin:6px;padding:7px 6px 6px;aspect-ratio:1/1}#setting-close>span{font-size:32px}#setting-close:hover{background:var(--lighterbg)}#setting>section{display:flex;flex-direction:column;padding:16px}#setting>section>h1{font-size:24px;margin:0;margin-bottom:24px;color:var(--grey3)}#setting>section>a{display:flex;align-items:center;padding:8px;border-radius:12px;color:var(--grey3)}#setting>section>a:hover{background-color:var(--lighterbg)}#setting>section>a>span{margin-right:10px}main{min-height:2000px;height:100%;display:flex;flex-direction:column;align-items:center}.header{color:#fff;position:relative;overflow:hidden;text-align:center;width:100%;height:350px;z-index:2;box-sizing:border-box;transition-duration:1s;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.header>.header-wrap>h1{font-size:100px;font-family:century-gothic;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0}.header:before{content:'';display:flex;background:linear-gradient(to bottom,var(--blackbluedark),var(--blackblue));position:absolute;border-radius:0 0 50% 50%;width:120vw;height:75%;z-index:-1}.header:after{content:'';display:flex;background:var(--blackblueOpacity);position:absolute;justify-content:center;align-items:flex-start;border-radius:0 0 50% 50%;top:80px;width:120vw;height:75%;z-index:-2}.header-wrap{transform:translateY(2%)}.header-wrap>h4{font-size:20px}.header-wrap>h1>img{transform:translateY(3px)}@media only screen and (max-width:767px){.header>.header-wrap>h1{font-size:54px}.header>.header-wrap>h1>img{width:54px;transform:translateY(0px)}.header>.header-wrap>h4{font-size:14px}}.game-list{display:flex;flex-direction:column;align-items:center;max-width:1500px;width:100%;box-sizing:border-box;padding:20px;gap:20px}
+.game-list>h3{font-size:28px;margin:20px}.game-list>a{padding:18px 32px;width:100%;max-width:600px;border-radius:50px;background:var(--lightbg);transition:background .5s}.game-list>a:hover{background:var(--lighterbg)}.hr-wrap{box-sizing:border-box;width:100%;padding:20px;margin-top:64px}hr{width:100%;border:.5px solid var(--grey2);background:var(--grey2)}footer{display:grid;margin:0;box-sizing:border-box;width:100%;gap:20px;padding:20px;padding-top:0;grid-template-columns:repeat(auto-fit,minmax(100px,1fr))}footer>div>p{color:var(--grey2);text-align:center;font-size:10px}body::-webkit-scrollbar{width:10px;height:10px;border:none}body::-webkit-scrollbar-track{background:var(--lightbg);border:none;z-index:-1}body::-webkit-scrollbar-thumb{background:var(--darkblue);border-radius:6px}body::-webkit-scrollbar-thumb:hover{background:var(--lightblue);cursor:move}
+</style>
     
-    body {
-     background-color: #1a1d21; 
-     margin: 0px;
-   }
-   
-   .game {
-   padding: 2px 4px; 
-   border-radius: 6px; 
-   transition-duration: 0.4s; 
-   width: 100%; 
-   cursor: pointer; 
-   opacity: 1; 
-   color: white;
-   font-family: "Century Gothic", "Monospace";
-   background-color: #5885AF;
-   margin: 32px 0px; 
-   border: 2px solid #C3E0E5;
-   text-decoration: none;
-   }
-   
-   .game:hover { 
-   opacity: 0.8; 
-   }
-   
-   .list {
-     column-count: 4;
-     line-height: 2;
-     font-family: "Century Gothic", "Monospace";
-     color: white;
-   }
-   
-   @media (max-width: 1900px) {
-   .list {
-    column-count: 3;
-  }
-}
-   
-   @media (max-width: 1200px) {
-   .list {
-    column-count: 2;
-  }
-}
-    
-   @media (max-width: 800px) {
-   .list {
-    column-count: 1;
-  }
-}
-   
-   div {
-     margin: 16px 16px;
-   }
-   
-   .title { 
-   background-color: #274472;
-   color: #C3E0E5;
-   padding: 32px 16px; 
-   margin: 0px; 
-   font-family: "Century Gothic", "Monospace";
-   font-size: 64px;
-   text-align: center;
-   }
-   
-   .text {
-   color: #C3E0E5; 
-   margin: 16px 16px; 
-   font-family: "Century Gothic", "Monospace";
-   }
+<body>
+  
+ <!-- ---- ---- NAV ---- ---- -->
+  
+<nav id="side">
+<button id="side-close" onclick="side()"><span class='material-symbols-outlined'>close</span></button>
+<section>
+    <a href="https://totob12.github.io/index.html"><span class="material-symbols-outlined">home</span><div class="dropdowncc">Home</div></a>
+    <a class="blanka" href=""></a>
+    <a href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">forum</span><div class="dropdowncc">Social</div></a>
+    <a href="https://TotoB12-inpainter.totob12.repl.co"><span class="material-symbols-outlined">format_paint</span><div class="dropdowncc">Paint</div></a>
+    <a href="https://totob12.github.io/radio"><span class="material-symbols-outlined">radio</span><div class="dropdowncc">Radio</div></a>
+    <a href="https://totob12.github.io/things/games.html"><span class="material-symbols-outlined">sports_esports</span><div class="dropdowncc">Games</div></a>
+    <a href="https://totob12.github.io/things/sites.html"><span class="material-symbols-outlined">handyman</span><div class="dropdowncc">Random</div></a>
+    <a href="https://totob12.github.io/countdown"><span class="material-symbols-outlined">hourglass_empty</span><div class="dropdowncc">Countdown</div></a>
+</section>
+</nav>
+  
+<nav>
+  <button id="side-btn" onclick="side(1)"/><span class='material-symbols-outlined'>menu</span></button>
+  <div class="nav-main-section">
+    <a class="home active" href="https://totob12.github.io/index.html"><span class="material-symbols-outlined">home</span></a>
+    <a href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">forum</span>Social</a>
+    <a href="https://TotoB12-inpainter.totob12.repl.co"><span class="material-symbols-outlined">format_paint</span>Paint</a>
+    <a href="https://totob12.github.io/radio"><span class="material-symbols-outlined">radio</span>Radio</a>
+    <a href="https://totob12.github.io/things/games.html"><span class="material-symbols-outlined">sports_esports</span>Games</a>
+    <a href="https://totob12.github.io/things/sites.html"><span class="material-symbols-outlined">handyman</span>Random</a>
+    <a href="https://totob12.github.io/countdown"><span class="material-symbols-outlined">hourglass_empty</span>Countdown</a>
+  </div>
+  <div class="nav-section ns3">
+  <button id="setting-btn" onclick="setting(1)"/><span class='material-symbols-outlined'>settings</span></button>
+  <img class="img" src="https://github.com/TotoB12/totob12.github.io/blob/main/things/logo.jpg?raw=true" alt="Logo" height="48px">
+  </div>
+</nav>
 
-    ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #41729F;
-  font-family: "Century Gothic", "Monospace";
-  }
+<nav id="setting">
+<button id="setting-close" onclick="setting()"><span class='material-symbols-outlined'>close</span></button>
+  <section>
+    <h1>Settings</h1>
+    <a href="https://totob12.github.io/things/feedback.html"><span class="material-symbols-outlined">alternate_email</span>Contact and help</a>
+  </section>
+</nav>
 
-  li a {
-  display: block;
-  text-align: center;
-  color: #c9c7c7;
-  text-decoration: none;
-  }
+<!-- ---- ---- MAIN ---- ---- -->
 
-  li a:hover:not(.active, .img) {
-  background-color: #5885AF;
-  }
-  
-  .active {
-  background-color: #39648C;
-  color: #c9c7c7;
-  }
-  
-  .icon {
-  padding: 10px 8px;  
-  float: left;
-  }
-  
-  .iconshow {
-  float: right;
-  }
-  
-  .right {
-  float: right;
-  }
-  
-  .img {
-  float: right;
-  }
+<main id="main">
 
-  .cc {
-    margin: 0;
-    padding: 5px 0;
-    padding-bottom: 0;
-    padding-left: 2px;
-    float: right;
-    color: #c9c7c7;
-    font-size: 14px
-  }
-    
-    </style>
-    
-    <body>
-    <ul>
-    <li><a class="img"><img src="totob12icon.png" alt="Logo" height="44"></a></li>
-    <li><a class="icon" href="https://totob12.github.io/index.html"><span class="material-symbols-outlined">
-    home</span></a></li>
-    <li><a class="icon" href="https://TotoB12-Chat.totob12.repl.co/"><span class="material-symbols-outlined">
-    forum</span><h10 class=cc>Social</h10></a></li>
-    <li><a class="icon" href="https://totob12.github.io/things/inpainting-forward.html"><span class="material-symbols-outlined">
-    format_paint</span><h10 class="cc">Paint</h10></a></li>
-    <li><a class="icon" href="https://chill-radio.totob12.repl.co/"><span class="material-symbols-outlined">
-    radio</span><h10 class="cc">Radio</h10></a></li>
-    <li><a class="icon active" href="https://totob12.github.io/things/games.html"><span class="material-symbols-outlined">
-    sports_esports</span><h10 class="cc">Games</h10></a></li>
-    <li><a class="icon" href="https://totob12.github.io/things/sites.html"><span class="material-symbols-outlined">
-    handyman</span><h10 class="cc">Random</h10></a></li>
-    <li><a class="icon right" href="https://totob12.github.io/things/feedback.html"><span class="material-symbols-outlined">
-    alternate_email</span></a></li>
-    <li><a class="icon right" href="https://totob12.github.io/things/countdown.html"><span class="material-symbols-outlined">
-    hourglass_empty</span></a></li>
-    </ul>
+<!-- ---- ---- HEADER ---- ---- -->
+  
+<div class="header">
+  <div class="header-wrap">
+  <h1 translate="no">TOT<img src="https://github.com/TotoB12/totob12.github.io/blob/main/things/logo.jpg?raw=true" width=100px>B12</h1>
+  <h4>GBA Elumator</h4>
+  </div>
+</div>
+
+<!-- ---- ---- GAMES ---- ---- -->
       
-        <h1 class="title">Retro games</h1>
-        <h2 class="text">Select a game:</h2>
-        <div>
-            <p class="list">
-            <strong>A</strong><br>
-            <a class="game" href="./launcher.html#advancewars">Advance Wars</a><br>
-            <a class="game" href="./launcher.html#advancewars2">Advance Wars 2</a><br>
-            <a class="game" href="./launcher.html#aladdin">Aladdin</a><br>
-            <a class="game" href="./launcher.html#alienhominid">Alien Hominid</a><br>
-            <strong>B</strong><br>
-            <a class="game" href="./launcher.html#bomberman_max2blue">Bomberman Max 2 - Blue Advance</a><br>
-            <a class="game" href="./launcher.html#bomberman_tournament">Bomberman Tournament</a><br>
-            <a class="game" href="./launcher.html#bubblebobble">Bubble Bobble: Old and New</a><br>
-            <strong>C</strong><br>
-            <a class="game" href="./launcher.html#croket1">Croket! - Yume no Banker Survival!</a><br>
-            <a class="game" href="./launcher.html#croket2">Croket! 2 - Yami no Bank to Banqueen</a><br>
-            <a class="game" href="./launcher.html#croket3">Croket! 3 - Granu Oukoku no Nazo</a><br>
-            <a class="game" href="./launcher.html#croket4">Croket! 4 - Bank no Mori no Mamorigami</a><br>
-            <strong>D</strong><br>
-            <a class="game" href="./launcher.html#digimon_racing">Digimon Racing</a><br>
-            <a class="game" href="./launcher.html#dbz_supersonic">Dragon Ball Z - Supersonic Warriors</a><br>
-            <a class="game" href="./launcher.html#drilldozer">Drill Dozer</a><br>
-            <strong>E</strong><br>
-            <a class="game" href="./launcher.html#earthwormjim">Earthworm Jim</a><br>
-            <a class="game" href="./launcher.html#earthwormjim2">Earthworm Jim 2</a><br>
-            <strong>F</strong><br>
-            <a class="game" href="./launcher.html#ff1and2">Final Fantasy 1 &amp; 2 Advance</a><br>
-            <a class="game" href="./launcher.html#ff4S">Final Fantasy IV Advance (Sound Restoration Mod)</a><br>
-            <a class="game" href="./launcher.html#ff6">Final Fantasy VI Advance</a><br>
-            <a class="game" href="./launcher.html#final_fantasy_tactics">Final Fantasy Tactics Advance</a><br>
-            <a class="game" href="./launcher.html#fire_emblem">Fire Emblem</a><br>
-            <a class="game" href="./launcher.html#frogger1">Frogger Advance - The Great Quest</a><br>
-            <a class="game" href="./launcher.html#frogger2">Frogger's Adventures - Temple of the Frog</a><br>
-            <a class="game" href="./launcher.html#fzero_gp">F-Zero - GP Legend</a><br>
-            <a class="game" href="./launcher.html#fzero_max">F-Zero - Maximum Velocity</a><br>
-            <strong>G</strong><br>
-            <a class="game" href="./launcher.html#gamewatch4">Game &amp; Watch Gallery 4</a><br>
-            <a class="game" href="./launcher.html#goldensun">Golden Sun</a><br>
-            <a class="game" ref="./launcher.html#gunstar_super_heroes">Gunstar Super Heroes</a><br>
-            <strong>H</strong><br>
-            <a class="game" href="./launcher.html#hamtaro_heartbreak">Hamtaro - Ham-Ham Heartbreak</a><br>
-            <strong>K</strong><br>
-            <a class="game" href="./launcher.html#kirbymirror">Kirby &amp; The Amazing Mirror</a><br>
-            <a class="game" href="./launcher.html#kirbynightmare">Kirby: Nightmare in Dreamland</a><br>
-            <strong>M</strong><br>
-            <a class="game" href="./launcher.html#superstar">Mario &amp; Luigi: Superstar Saga</a><br>
-            <a class="game" href="./launcher.html#mariokart">Mario Kart: Super Circuit</a><br>
-            <a class="game" href="./launcher.html#marioparty">Mario Party Advance</a><br>
-            <a class="game" href="./launcher.html#mariopinball">Mario Pinball Land</a><br>
-            <a class="game" href="./launcher.html#megamanbass">Megaman &amp; Bass</a><br>
-            <a class="game" href="./launcher.html#megaman_battle1">Megaman Battle Network 1</a><br>
-            <a class="game" href="./launcher.html#megaman_battle2">Megaman Battle Network 2</a><br>
-            <a class="game" href="./launcher.html#megaman_battle3_blue">Megaman Battle Network 3 Blue</a><br>
-            <a class="game" href="./launcher.html#megaman_battle4_blue">Megaman Battle Network 4 Blue Moon</a><br>
-            <a class="game" href="./launcher.html#megaman_battle4_red">Megaman Battle Network 4 Red Sun</a><br>
-            <a class="game" href="./launcher.html#megaman_battle5">Megaman Battle Network 5 Team Protoman</a><br>
-            <a class="game" href="./launcher.html#megaman_battle6">Megaman Battle Network 6 Cybeast Falzar</a><br>
-            <a class="game" href="./launcher.html#megaman_zero1">Megaman Zero</a><br>
-            <a class="game" href="./launcher.html#megaman_zero2">Megaman Zero 2</a><br>
-            <a class="game" href="./launcher.html#megaman_zero3">Megaman Zero 3</a><br>
-            <a class="game" href="./launcher.html#megaman_zero4">Megaman Zero 4</a><br>
-            <a class="game" href="./launcher.html#metalslug">Metal Slug Advance</a><br>
-            <a class="game" href="./launcher.html#metroid_fusion">Metriod Fusion</a><br>
-            <a class="game" href="./launcher.html#momotarou_dentetsu">Momotarou Dentetsu G Gold Deck wo Tsukure!</a><br>
-            <a class="game" href="./launcher.html#monopoly">Monopoly</a><br>
-            <a class="game" href="./launcher.html#monster_force">Monster Force</a><br>
-            <a class="game" href="./launcher.html#mortal_kombat">Mortal Kombat Advance</a><br>
-            <strong>P</strong><br>
-            <a class="game" href="./launcher.html#pacman_world">Pacman World</a><br>
-            <a class="game" href="./launcher.html#pacman_world2">Pacman World 2</a><br>
-            <a class="game" href="./launcher.html#pokemonemerald">Pokemon Emerald</a><br>
-            <a class="game" href="./launcher.html#pokemongreen">Pokemon Leaf Green</a><br>
-            <a class="game" href="./launcher.html#pokemonred">Pokemon Fire Red</a><br>
-            <a class="game" href="./launcher.html#mysteryred">Pokemon Mystery Dungeon Red</a><br>
-            <a class="game" href="./launcher.html#pokemonruby">Pokemon Ruby</a><br>
-            <a class="game" href="./launcher.html#pokemonsapphire">Pokemon Sapphire</a><br>
-            <a class="game" href="./launcher.html#gba_video_pokemon_1">Pokemon Video Show Pak 1</a><br>
-            <a class="game" href="./launcher.html#gba_video_pokemon_2">Pokemon Video Show Pak 2</a><br>
-            <a class="game" href="./launcher.html#gba_video_pokemon_3">Pokemon Video Show Pak 3</a><br>
-            <a class="game" href="./launcher.html#gba_video_pokemon_4">Pokemon Video Show Pak 4</a><br>
-            <strong>S</strong><br>
-            <a class="game" href="./launcher.html#sonic_advance">Sonic Advance</a><br>
-            <a class="game" href="./launcher.html#sonic_advance2">Sonic Advance 2</a><br>
-            <a class="game" href="./launcher.html#sonic_advance3">Sonic Advance 3</a><br>
-            <a class="game" href="./launcher.html#sonicbattle">Sonic Battle</a><br>
-            <a class="game" href="./launcher.html#sonicpinball">Sonic Pinball</a><br>
-            <a class="game" href="./launcher.html#spyro_adventure">Spyro Adventure</a><br>
-            <a class="game" href="./launcher.html#spyro_ice">Spyro: Season of Ice</a><br>
-            <a class="game" href="./launcher.html#spyro_flame">Spyro 2: Season of Flame</a><br>
-            <a class="game" href="./launcher.html#supermarioadvance">Super Mario Advance</a><br>
-            <a class="game" href="./launcher.html#supermarioadvance2">Super Mario Advance 2</a><br>
-            <a class="game" href="./launcher.html#supermarioadvance3">Super Mario Advance 3</a><br>
-            <a class="game" href="./launcher.html#supermarioadvance4">Super Mario Advance 4</a><br>
-            <a class="game" href="./launcher.html#supermonkeyballjr">Super Monkey Ball Jr</a><br>
-            <a class="game" href="./launcher.html#super_street_fighter_2_turbo_revival">Super Street Fighter II: Turbo Revival</a><br>
-            <a class="game" href="./launcher.html#super_street_fighter_3_alpha">Super Street Fighter III: Alpha</a><br>
-            <strong>T</strong><br>
-            <a class="game" href="./launcher.html#tales_of_phantasia">Tales of Phantasia</a><br>
-            <a class="game" href="./launcher.html#tak2_staff_of_dreams">Tak 2: The Staff of Dreams</a><br>
-            <a class="game" href="./launcher.html#tmnt">Teenage Mutant Ninja Turtles</a><br>
-            <a class="game" href="./launcher.html#tetris_worlds">Tetris Worlds</a><br>
-            <a class="game" href="./launcher.html#sims_bustin_out">The Sims: Bustin &#39; Out</a><br>
-            <a class="game" href="./launcher.html#sims2">The Sims 2</a><br>
-            <a class="game" href="./launcher.html#simpsons">The Simpsons: Road Rage</a><br>
-            <a class="game" href="./launcher.html#turok_evolution">Turok Evolution</a><br>
-            <a class="game" href="./launcher.html#zelda_past">The Legend of Zelda: A Link to the Past</a><br>
-            <a class="game" href="./launcher.html#zelda_minish">The Legend of Zelda: The Minish Cap</a><br>
-            <strong>W</strong><br>
-            <a class="game" href="./launcher.html#warioland4">Wario Land 4</a><br>
-            <a class="game" href="./launcher.html#wario_ware">Wario Ware Inc</a><br>
-            </p>
-            </div>
-    </body>
+<div class='game-list'>
+  <h3 id='a'>A</h3>
+  <a href="./launcher.html#advancewars">Advance Wars</a> 
+  <a href="./launcher.html#advancewars2">Advance Wars 2</a> 
+  <a href="./launcher.html#aladdin">Aladdin</a> 
+  <a href="./launcher.html#alienhominid">Alien Hominid</a> 
+  <h3 id='b'>B</h3> 
+  <a href="./launcher.html#bomberman_max2blue">Bomberman Max 2 - Blue Advance</a> 
+  <a href="./launcher.html#bomberman_tournament">Bomberman Tournament</a> 
+  <a href="./launcher.html#bubblebobble">Bubble Bobble: Old and New</a> 
+  <h3 id='c'>C</h3> 
+  <a href="./launcher.html#croket1">Croket! - Yume no Banker Survival!</a> 
+  <a href="./launcher.html#croket2">Croket! 2 - Yami no Bank to Banqueen</a> 
+  <a href="./launcher.html#croket3">Croket! 3 - Granu Oukoku no Nazo</a> 
+  <a href="./launcher.html#croket4">Croket! 4 - Bank no Mori no Mamorigami</a> 
+  <h3 id='d'>D</h3> 
+  <a href="./launcher.html#digimon_racing">Digimon Racing</a> 
+  <a href="./launcher.html#dbz_supersonic">Dragon Ball Z - Supersonic Warriors</a> 
+  <a href="./launcher.html#drilldozer">Drill Dozer</a> 
+  <h3 id='e'>E</h3> 
+  <a href="./launcher.html#earthwormjim">Earthworm Jim</a> 
+  <a href="./launcher.html#earthwormjim2">Earthworm Jim 2</a> 
+  <h3 id='f'>F</h3> 
+  <a href="./launcher.html#ff1and2">Final Fantasy 1 &amp; 2 Advance</a> 
+  <a href="./launcher.html#ff4S">Final Fantasy IV Advance (Sound Restoration Mod)</a> 
+  <a href="./launcher.html#ff6">Final Fantasy VI Advance</a> 
+  <a href="./launcher.html#final_fantasy_tactics">Final Fantasy Tactics Advance</a> 
+  <a href="./launcher.html#fire_emblem">Fire Emblem</a> 
+  <a href="./launcher.html#frogger1">Frogger Advance - The Great Quest</a> 
+  <a href="./launcher.html#frogger2">Frogger's Adventures - Temple of the Frog</a> 
+  <a href="./launcher.html#fzero_gp">F-Zero - GP Legend</a> 
+  <a href="./launcher.html#fzero_max">F-Zero - Maximum Velocity</a> 
+  <h3 id='g'>G</h3> 
+  <a href="./launcher.html#gamewatch4">Game &amp; Watch Gallery 4</a> 
+  <a href="./launcher.html#goldensun">Golden Sun</a> 
+  <a ref="./launcher.html#gunstar_super_heroes">Gunstar Super Heroes</a> 
+  <h3 id='h'>H</h3> 
+  <a href="./launcher.html#hamtaro_heartbreak">Hamtaro - Ham-Ham Heartbreak</a> 
+  <h3 id='k'>K</h3> 
+  <a href="./launcher.html#kirbymirror">Kirby &amp; The Amazing Mirror</a> 
+  <a href="./launcher.html#kirbynightmare">Kirby: Nightmare in Dreamland</a> 
+  <h3 id='m'>M</h3> 
+  <a href="./launcher.html#superstar">Mario &amp; Luigi: Superstar Saga</a> 
+  <a href="./launcher.html#mariokart">Mario Kart: Super Circuit</a> 
+  <a href="./launcher.html#marioparty">Mario Party Advance</a> 
+  <a href="./launcher.html#mariopinball">Mario Pinball Land</a> 
+  <a href="./launcher.html#megamanbass">Megaman &amp; Bass</a> 
+  <a href="./launcher.html#megaman_battle1">Megaman Battle Network 1</a> 
+  <a href="./launcher.html#megaman_battle2">Megaman Battle Network 2</a> 
+  <a href="./launcher.html#megaman_battle3_blue">Megaman Battle Network 3 Blue</a> 
+  <a href="./launcher.html#megaman_battle4_blue">Megaman Battle Network 4 Blue Moon</a> 
+  <a href="./launcher.html#megaman_battle4_red">Megaman Battle Network 4 Red Sun</a> 
+  <a href="./launcher.html#megaman_battle5">Megaman Battle Network 5 Team Protoman</a> 
+  <a href="./launcher.html#megaman_battle6">Megaman Battle Network 6 Cybeast Falzar</a> 
+  <a href="./launcher.html#megaman_zero1">Megaman Zero</a> 
+  <a href="./launcher.html#megaman_zero2">Megaman Zero 2</a> 
+  <a href="./launcher.html#megaman_zero3">Megaman Zero 3</a> 
+  <a href="./launcher.html#megaman_zero4">Megaman Zero 4</a> 
+  <a href="./launcher.html#metalslug">Metal Slug Advance</a> 
+  <a href="./launcher.html#metroid_fusion">Metriod Fusion</a> 
+  <a href="./launcher.html#momotarou_dentetsu">Momotarou Dentetsu G Gold Deck wo Tsukure!</a> 
+  <a href="./launcher.html#monopoly">Monopoly</a> 
+  <a href="./launcher.html#monster_force">Monster Force</a> 
+  <a href="./launcher.html#mortal_kombat">Mortal Kombat Advance</a> 
+  <h3 id='p'>P</h3> 
+  <a href="./launcher.html#pacman_world">Pacman World</a> 
+  <a href="./launcher.html#pacman_world2">Pacman World 2</a> 
+  <a href="./launcher.html#pokemonemerald">Pokemon Emerald</a> 
+  <a href="./launcher.html#pokemongreen">Pokemon Leaf Green</a> 
+  <a href="./launcher.html#pokemonred">Pokemon Fire Red</a> 
+  <a href="./launcher.html#mysteryred">Pokemon Mystery Dungeon Red</a> 
+  <a href="./launcher.html#pokemonruby">Pokemon Ruby</a> 
+  <a href="./launcher.html#pokemonsapphire">Pokemon Sapphire</a> 
+  <a href="./launcher.html#gba_video_pokemon_1">Pokemon Video Show Pak 1</a> 
+  <a href="./launcher.html#gba_video_pokemon_2">Pokemon Video Show Pak 2</a> 
+  <a href="./launcher.html#gba_video_pokemon_3">Pokemon Video Show Pak 3</a> 
+  <a href="./launcher.html#gba_video_pokemon_4">Pokemon Video Show Pak 4</a> 
+  <h3 id='s'>S</h3> 
+  <a href="./launcher.html#sonic_advance">Sonic Advance</a> 
+  <a href="./launcher.html#sonic_advance2">Sonic Advance 2</a> 
+  <a href="./launcher.html#sonic_advance3">Sonic Advance 3</a> 
+  <a href="./launcher.html#sonicbattle">Sonic Battle</a> 
+  <a href="./launcher.html#sonicpinball">Sonic Pinball</a> 
+  <a href="./launcher.html#spyro_adventure">Spyro Adventure</a> 
+  <a href="./launcher.html#spyro_ice">Spyro: Season of Ice</a> 
+  <a href="./launcher.html#spyro_flame">Spyro 2: Season of Flame</a> 
+  <a href="./launcher.html#supermarioadvance">Super Mario Advance</a> 
+  <a href="./launcher.html#supermarioadvance2">Super Mario Advance 2</a> 
+  <a href="./launcher.html#supermarioadvance3">Super Mario Advance 3</a> 
+  <a href="./launcher.html#supermarioadvance4">Super Mario Advance 4</a> 
+  <a href="./launcher.html#supermonkeyballjr">Super Monkey Ball Jr</a> 
+  <a href="./launcher.html#super_street_fighter_2_turbo_revival">Super Street Fighter II: Turbo Revival</a> 
+  <a href="./launcher.html#super_street_fighter_3_alpha">Super Street Fighter III: Alpha</a> 
+  <h3 id='t'>T</h3> 
+  <a href="./launcher.html#tales_of_phantasia">Tales of Phantasia</a> 
+  <a href="./launcher.html#tak2_staff_of_dreams">Tak 2: The Staff of Dreams</a> 
+  <a href="./launcher.html#tmnt">Teenage Mutant Ninja Turtles</a> 
+  <a href="./launcher.html#tetris_worlds">Tetris Worlds</a> 
+  <a href="./launcher.html#sims_bustin_out">The Sims: Bustin &#39; Out</a> 
+  <a href="./launcher.html#sims2">The Sims 2</a> 
+  <a href="./launcher.html#simpsons">The Simpsons: Road Rage</a> 
+  <a href="./launcher.html#turok_evolution">Turok Evolution</a> 
+  <a href="./launcher.html#zelda_past">The Legend of Zelda: A Link to the Past</a> 
+  <a href="./launcher.html#zelda_minish">The Legend of Zelda: The Minish Cap</a> 
+  <h3 id='w'>W</h3> 
+  <a href="./launcher.html#warioland4">Wario Land 4</a> 
+  <a href="./launcher.html#wario_ware">Wario Ware Inc</a> 
+</div>
+
+<!-- ---- ---- FOOTER ---- ---- -->
+
+<div class="hr-wrap"><hr></div>
+<footer>
+  <div>
+    <p>Design, HTML, CSS, JS by @txoriurdina</p>
+    <p>Logo by @melatonin</p>
+  </div>
+
+  <div>
+    <p>A website by @TotoB12</p>
+    <p>Contact at <a href = "mailto:totob12github@gmail.com" target = "_self">totob12github@gmail.com</a></p>
+  </div>
+
+  <div>
+    <p>© Copyright All rights reserved</p>
+    <p>Hosted by Github and Replit</p>  
+  </div>
+</footer>
+
+</main>
+<script>
+document.addEventListener('keydown', e => {
+  if (e.repeat) return
+  const index = e.key
+  document.getElementById(index).scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+})
+  
+//sidebar
+function side (open) {
+  if (open) {
+    document.getElementById("side").classList.add("show");
+    document.getElementById("setting").classList.remove("show");
+  } else {
+    document.getElementById("side").classList.remove("show");
+  }
+}
+
+//setting
+function setting (open) {
+  if (open) {
+    document.getElementById("setting").classList.add("show");
+    document.getElementById("side").classList.remove("show");
+  } else {
+    document.getElementById("setting").classList.remove("show");
+  }
+}
+
+//sidebar and setting close on click
+var main = document.getElementById("main");
+
+main.addEventListener("click", function(){
+    if(document.getElementById("setting").className == "show") {
+        document.getElementById("setting").classList.remove("show");
+    }
+    if(document.getElementById("side").className == "show") {
+        document.getElementById("side").classList.remove("show");
+    }
+});
+</script>
+</body>
 </html>
